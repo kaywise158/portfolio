@@ -138,7 +138,7 @@ export const AboutSection: React.FC = () => {
                   My Journey
                 </Heading>
                 <Text color='gray.300' lineHeight='tall'>
-                  With over 5 years of experience in software development, I've
+                  With over 4 years of experience in software development, I've
                   worked on diverse projects ranging from e-commerce platforms
                   to real-time applications. I'm constantly learning and
                   adapting to new technologies to deliver the best solutions.
