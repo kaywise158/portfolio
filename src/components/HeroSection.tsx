@@ -60,10 +60,10 @@ export const HeroSection: React.FC = () => {
 
             {/* Description */}
             <Text fontSize='lg' color='gray.300' lineHeight='tall'>
-              I build exceptional digital experiences with the MERN
-              stack,Next.js and Java Spring Boot. Passionate about creating
-              scalable, user-friendly applications that solve real-world
-              problems.
+              Full Stack Developer with 3+ years building production web
+              applications using Next.js, React, TypeScript, and Node.js. I
+              specialize in payment integration, real-time systems, and scalable
+              solutions that solve real-world problems.
             </Text>
 
             {/* CTA Buttons */}
@@ -145,7 +145,7 @@ export const HeroSection: React.FC = () => {
                   LinkedIn
                 </Button>
               </Link>
-              <Link
+              {/* <Link
                 href='https://twitter.com/az'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -161,7 +161,7 @@ export const HeroSection: React.FC = () => {
                 >
                   Twitter
                 </Button>
-              </Link>
+              </Link> */}
               <Link href='mailto:abdulazeezmuritador9@gmail.com'>
                 <Button
                   size='lg'

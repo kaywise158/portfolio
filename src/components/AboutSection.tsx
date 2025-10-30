@@ -131,6 +131,7 @@ export const AboutSection: React.FC = () => {
         {/* About Content */}
         <Stack spacing='16'>
           {/* Bio Section */}
+          {/* Bio Section */}
           <Box>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing='8' mb='12'>
               <Stack spacing='4'>
@@ -138,15 +139,18 @@ export const AboutSection: React.FC = () => {
                   My Journey
                 </Heading>
                 <Text color='gray.300' lineHeight='tall'>
-                  With over 4 years of experience in software development, I've
-                  worked on diverse projects ranging from e-commerce platforms
-                  to real-time applications. I'm constantly learning and
-                  adapting to new technologies to deliver the best solutions.
+                  With 3+ years of experience in full-stack development, I've
+                  built diverse production applications including e-commerce
+                  platforms with Stripe/Paystack integration, real-time
+                  educational systems using Socket.io, and enterprise dashboards
+                  with Next.js and TypeScript.
                 </Text>
                 <Text color='gray.300' lineHeight='tall'>
                   I believe in writing clean, maintainable code and following
-                  best practices. My goal is to create applications that not
-                  only meet requirements but exceed expectations.
+                  best practices. My background in Physics and
+                  Telecommunications has given me strong analytical and
+                  problem-solving skills that I apply to building scalable web
+                  solutions.
                 </Text>
               </Stack>
 
@@ -155,15 +159,17 @@ export const AboutSection: React.FC = () => {
                   What I Do
                 </Heading>
                 <Text color='gray.300' lineHeight='tall'>
-                  I specialize in full-stack development, with a strong focus on
-                  modern JavaScript frameworks and scalable backend
-                  architectures. I'm experienced in both SQL and NoSQL
-                  databases, cloud services, and DevOps practices.
+                  I specialize in modern JavaScript/TypeScript development with
+                  Next.js, React, and Node.js. I work with both SQL (PostgreSQL)
+                  and NoSQL (MongoDB) databases, implement secure authentication
+                  systems, and integrate payment gateways and real-time
+                  features.
                 </Text>
                 <Text color='gray.300' lineHeight='tall'>
-                  When I'm not coding, I enjoy exploring new technologies,
-                  working on side projects, and sharing knowledge with other
-                  developers.
+                  Currently expanding my skill set into Java and Spring Boot to
+                  contribute to enterprise-level backend systems. When I'm not
+                  coding, I'm learning new technologies and exploring ways to
+                  write better, more efficient code.
                 </Text>
               </Stack>
             </SimpleGrid>
