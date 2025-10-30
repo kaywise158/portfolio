@@ -139,18 +139,20 @@ export const AboutSection: React.FC = () => {
                   My Journey
                 </Heading>
                 <Text color='gray.300' lineHeight='tall'>
-                  With 3+ years of experience in full-stack development, I've
-                  built diverse production applications including e-commerce
-                  platforms with Stripe/Paystack integration, real-time
-                  educational systems using Socket.io, and enterprise dashboards
-                  with Next.js and TypeScript.
+                  I began my tech career as a Frontend Developer intern at
+                  LogicGlide Global Solution, where I learned core web
+                  technologies and collaborated with a team to build
+                  applications. Since then, I've grown into a full-stack
+                  developer with 3 years of experience building production
+                  applications including e-commerce platforms, real-time
+                  systems, and enterprise dashboards.
                 </Text>
                 <Text color='gray.300' lineHeight='tall'>
-                  I believe in writing clean, maintainable code and following
-                  best practices. My background in Physics and
-                  Telecommunications has given me strong analytical and
-                  problem-solving skills that I apply to building scalable web
-                  solutions.
+                  My background in Physics and Telecommunications combined with
+                  my self-taught journey in full-stack development has given me
+                  strong analytical and problem-solving skills. I believe in
+                  writing clean, maintainable code and continuously learning to
+                  deliver better solutions.
                 </Text>
               </Stack>
 
