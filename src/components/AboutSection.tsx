@@ -131,7 +131,6 @@ export const AboutSection: React.FC = () => {
         {/* About Content */}
         <Stack spacing='16'>
           {/* Bio Section */}
-          {/* Bio Section */}
           <Box>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing='8' mb='12'>
               <Stack spacing='4'>
@@ -139,11 +138,10 @@ export const AboutSection: React.FC = () => {
                   My Journey
                 </Heading>
                 <Text color='gray.300' lineHeight='tall'>
-                  I began my tech career as a Frontend Developer intern at
-                  LogicGlide Global Solution, where I learned core web
-                  technologies and collaborated with a team to build
-                  applications. Since then, I've grown into a full-stack
-                  developer with 3 years of experience building production
+                  I began my tech journey by building core frontend foundations
+                  and contributing to real-world projects that strengthened my
+                  skills in modern web development. Over the past 3+ years, I’ve
+                  grown into a full-stack developer, building production-ready
                   applications including e-commerce platforms, real-time
                   systems, and enterprise dashboards.
                 </Text>
