@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
     <Box
       px={4}
       borderBottom='1px'
-      borderColor='green.500'
+     borderColor='whiteAlpha.200'
       position='sticky'
       top='0'
       zIndex='1000'
@@ -52,13 +52,7 @@ export const Navbar: React.FC = () => {
             to='/'
             _hover={{ textDecoration: 'none' }}
           >
-            <Text
-              fontSize='2xl'
-              fontWeight='bold'
-              bgGradient='linear(to-r, green.300, green.500)'
-              bgClip='text'
-              fontFamily='"Lobster", cursive'
-            >
+           <Text fontSize='2xl' fontWeight='bold' bgGradient='linear(to-r, gray.300, white)' bgClip='text' fontFamily='"Lobster", cursive'>
               ABDUL
             </Text>
           </ChakraLink>
@@ -78,8 +72,8 @@ export const Navbar: React.FC = () => {
                 color='gray.300'
                 _hover={{
                   textDecoration: 'none',
-                  bg: 'green.800',
-                  color: 'green.100',
+                  bg: 'whiteAlpha.100',
+                  color: 'white',
                 }}
                 transition='all 0.2s'
               >
@@ -99,7 +93,7 @@ export const Navbar: React.FC = () => {
               onClick={onOpen}
               color='white'
               bg='transparent'
-              _hover={{ bg: 'green.700' }}
+              _hover={{ bg:'whiteAlpha.100' }}
             />
           </HStack>
         </Flex>
@@ -111,16 +105,16 @@ export const Navbar: React.FC = () => {
         <DrawerContent
           bg='rgba(0, 0, 0, 0.95)'
           borderLeft='1px'
-          borderColor='green.700'
+         borderColor='whiteAlpha.200'
         >
           <DrawerCloseButton color='white' />
-          <DrawerHeader borderBottom='1px' borderColor='green.700'>
+          <DrawerHeader borderBottom='1px' borderColor='whiteAlpha.200'>
             <Text
               fontSize='2xl'
               fontWeight='bold'
-              bgGradient='linear(to-r, green.300, green.500)'
+              color='white'
               bgClip='text'
-              fontFamily='"Lobster", cursive'
+              fontFamily='Space Grotesk, sans-serif'
             >
               ABDUL
             </Text>
@@ -141,8 +135,7 @@ export const Navbar: React.FC = () => {
                   color='gray.300'
                   _hover={{
                     textDecoration: 'none',
-                    bg: 'green.800',
-                    color: 'green.100',
+                 bg: 'whiteAlpha.100', color: 'white'
                   }}
                   transition='all 0.2s'
                   onClick={onClose}

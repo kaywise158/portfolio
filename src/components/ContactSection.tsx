@@ -36,6 +36,7 @@ import {
   FaCheckCircle,
 } from 'react-icons/fa';
 import { type IconType } from 'react-icons';
+import { bgGradient } from '../App';
 
 interface ContactInfo {
   icon: IconType;
@@ -96,7 +97,7 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ info }) => {
       p='6'
       bg='rgba(255, 255, 255, 0.05)'
       borderWidth='1px'
-      borderColor='green.700'
+      borderColor='whiteAlpha.150'
       borderRadius='xl'
       transition='all 0.3s'
       backdropFilter='blur(10px)'
@@ -159,8 +160,7 @@ export const ContactSection: React.FC = () => {
     message: '',
   });
 
-  const bgGradient =
-    'linear(110deg, green.900 0%, black 15%, green.900 50%,  black 85%, )';
+ 
 
   const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -290,7 +290,7 @@ export const ContactSection: React.FC = () => {
             boxShadow='lg'
             backdropFilter='blur(10px)'
             border='1px solid'
-            borderColor='green.700'
+            borderColor='whiteAlpha.150'
           >
             <form onSubmit={handleSubmit}>
               <Stack spacing='6'>
@@ -303,7 +303,7 @@ export const ContactSection: React.FC = () => {
                     placeholder='Your name'
                     size='lg'
                     bg='rgba(255, 255, 255, 0.1)'
-                    borderColor='green.700'
+                    borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
                     _hover={{ borderColor: 'green.500' }}
@@ -324,7 +324,7 @@ export const ContactSection: React.FC = () => {
                     placeholder='your.email@example.com'
                     size='lg'
                     bg='rgba(255, 255, 255, 0.1)'
-                    borderColor='green.700'
+                    borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
                     _hover={{ borderColor: 'green.500' }}
@@ -344,7 +344,7 @@ export const ContactSection: React.FC = () => {
                     placeholder='Project inquiry'
                     size='lg'
                     bg='rgba(255, 255, 255, 0.1)'
-                    borderColor='green.700'
+                    borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
                     _hover={{ borderColor: 'green.500' }}
@@ -365,7 +365,7 @@ export const ContactSection: React.FC = () => {
                     rows={6}
                     size='lg'
                     bg='rgba(255, 255, 255, 0.1)'
-                    borderColor='green.700'
+                    borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
                     _hover={{ borderColor: 'green.500' }}
@@ -440,7 +440,7 @@ export const ContactSection: React.FC = () => {
                 bg='rgba(72, 187, 120, 0.1)'
                 borderRadius='lg'
                 borderWidth='1px'
-                borderColor='green.700'
+                borderColor='whiteAlpha.150'
               >
                 <Text fontSize='sm' color='green.300' textAlign='center'>
                   💡 In the meantime, feel free to check out my projects or

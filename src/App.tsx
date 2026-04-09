@@ -23,7 +23,8 @@ const ContactSection = lazy(() =>
 );
 
 export const bgGradient =
-  'linear(110deg, green.900 0%, black 15%, green.900 50%, black 85%)';
+  'linear-gradient(135deg, #0a0a0a, #2d2d2d';
+
 
 const LoadingFallback = ({ text = 'Loading...' }: { text?: string }) => (
   <Flex justify='center' align='center' h='60vh' direction='column' gap={3}>
@@ -31,10 +32,10 @@ const LoadingFallback = ({ text = 'Loading...' }: { text?: string }) => (
       thickness='4px'
       speed='0.65s'
       emptyColor='gray.200'
-      color='green.500'
+    color='whiteAlpha.600'
       size='xl'
     />
-    <Text color='green.300' fontSize='lg' fontWeight='medium'>
+    <Text color='gray.400' fontSize='lg' fontWeight='medium'>
       {text}
     </Text>
   </Flex>

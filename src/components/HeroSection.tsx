@@ -41,7 +41,7 @@ export const HeroSection: React.FC = () => {
             <Text
               fontSize='xl'
               fontWeight='semibold'
-              color='green.300'
+              color='gray.400'
               textTransform='uppercase'
               letterSpacing='wider'
             >
@@ -54,13 +54,13 @@ export const HeroSection: React.FC = () => {
             </Heading>
 
             {/* Title/Role */}
-            <Heading as='h2' size='xl' color='green.200' fontWeight='medium'>
+            <Heading as='h2' size='xl' color='whiteAlpha.800' fontWeight='medium'>
               Full Stack Software Developer
             </Heading>
 
             {/* Description */}
             <Text fontSize='lg' color='gray.300' lineHeight='tall'>
-              Full Stack Developer with 3+ years building production web
+              Full Stack Developer with 4+ years building production web
               applications using Next.js, React, TypeScript, and Node.js. I
               specialize in payment integration, real-time systems, and scalable
               solutions that solve real-world problems.
@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 size='lg'
-                colorScheme='green'
+                colorScheme='whiteAlpha'
                 px='8'
                 w={{ base: '100%', sm: 'auto' }}
                 _hover={{
@@ -100,13 +100,13 @@ export const HeroSection: React.FC = () => {
                 size='lg'
                 variant='outline'
                 color='white'
-                borderColor='green.300'
+                borderColor='whiteAlpha.500'
                 leftIcon={<HiDownload />}
                 px='8'
                 w={{ base: '100%', sm: 'auto' }}
                 _hover={{
                   transform: 'translateY(-2px)',
-                  bg: 'green.500',
+                 bg:'whiteAlpha.200',
                   color: 'white',
                 }}
                 transition='all 0.2s'
@@ -126,7 +126,7 @@ export const HeroSection: React.FC = () => {
                   variant='ghost'
                   color='white'
                   leftIcon={<FaGithub size='24' />}
-                  _hover={{ bg: 'green.500', color: 'white' }}
+               _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                 >
                   GitHub
                 </Button>
@@ -140,12 +140,12 @@ export const HeroSection: React.FC = () => {
                   variant='ghost'
                   color='white'
                   leftIcon={<FaLinkedin size='24' />}
-                  _hover={{ bg: 'green.500', color: 'white' }}
+                _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                 >
                   LinkedIn
                 </Button>
               </Link>
-              {/* <Link
+              <Link
                 href='https://twitter.com/az'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -157,18 +157,18 @@ export const HeroSection: React.FC = () => {
                   variant='ghost'
                   color='white'
                   leftIcon={<FaTwitter size='24' />}
-                  _hover={{ bg: 'green.500', color: 'white' }}
+                 _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                 >
                   Twitter
                 </Button>
-              </Link> */}
+              </Link>
               <Link href='mailto:abdulazeezmuritador9@gmail.com'>
                 <Button
                   size='lg'
                   variant='ghost'
                   color='white'
                   leftIcon={<FaEnvelope size='24' />}
-                  _hover={{ bg: 'green.500', color: 'white' }}
+                 _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                 >
                   Email
                 </Button>
@@ -190,7 +190,7 @@ export const HeroSection: React.FC = () => {
                     size='lg'
                     variant='ghost'
                     color='white'
-                    _hover={{ bg: 'green.500', color: 'white' }}
+                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -205,7 +205,7 @@ export const HeroSection: React.FC = () => {
                     size='lg'
                     variant='ghost'
                     color='white'
-                    _hover={{ bg: 'green.500', color: 'white' }}
+                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -222,7 +222,7 @@ export const HeroSection: React.FC = () => {
                     size='lg'
                     variant='ghost'
                     color='white'
-                    _hover={{ bg: 'green.500', color: 'white' }}
+                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -234,7 +234,7 @@ export const HeroSection: React.FC = () => {
                     size='lg'
                     variant='ghost'
                     color='white'
-                    _hover={{ bg: 'green.500', color: 'white' }}
+                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -261,7 +261,7 @@ export const HeroSection: React.FC = () => {
                 right='0'
                 w='100%'
                 h='100%'
-                bg='green.500'
+                bg='whiteAlpha.300'
                 borderRadius='full'
                 opacity='0.1'
                 filter='blur(40px)'
@@ -273,14 +273,14 @@ export const HeroSection: React.FC = () => {
                 w='100%'
                 h='100%'
                 borderRadius='full'
-                bgGradient='linear(135deg, green.300, green.500, cyan.400, green.300)'
+               bgGradient='linear(135deg, whiteAlpha.600, whiteAlpha.200, whiteAlpha.500, whiteAlpha.600)'
                 p='8px'
                 boxShadow='2xl'
                 zIndex='1'
               >
                 {/* Profile Image */}
                 <Avatar
-                  src='/abdul_photo.png'
+                  src='/profile-photo.png'
                   name='Abdulazeez'
                   borderRadius='full'
                   w='100%'
@@ -301,12 +301,12 @@ export const HeroSection: React.FC = () => {
                 borderRadius='full'
                 boxShadow='xl'
                 border='2px solid'
-                borderColor='green.500'
+               borderColor='whiteAlpha.400'
                 zIndex='2'
               >
                 <Text
                   fontWeight='bold'
-                  color='green.200'
+                 color='whiteAlpha.900'
                   fontSize={{ base: 'sm', md: 'md' }}
                 >
                   Available for work

@@ -16,6 +16,7 @@ import {
   type Skill,
   type SkillCategory,
 } from '../utils/Skills';
+import { bgGradient } from '../App';
 
 interface SkillCardProps {
   category: SkillCategory;
@@ -27,7 +28,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
       p='6'
       bg='rgba(255, 255, 255, 0.05)'
       borderWidth='1px'
-      borderColor='green.700'
+      borderColor='whiteAlpha.150'
       borderRadius='xl'
       transition='all 0.3s'
       backdropFilter='blur(10px)'
@@ -45,7 +46,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
           align='center'
           justify='center'
           borderRadius='lg'
-          bg={`rgba(72, 187, 120, 0.2)`}
+          bg={'whiteAlpha.100'}
         >
           <Icon as={category.icon} boxSize='6' color={category.color} />
         </Flex>
@@ -70,7 +71,7 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
       p='6'
       bg='rgba(255, 255, 255, 0.05)'
       borderWidth='1px'
-      borderColor='green.700'
+      borderColor='whiteAlpha.150'
       borderRadius='lg'
       transition='all 0.3s'
       backdropFilter='blur(10px)'
@@ -88,7 +89,7 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
           align='center'
           justify='center'
           borderRadius='lg'
-          bg='rgba(255, 255, 255, 0.05)'
+          bg='whiteAlpha.100'
           transition='all 0.3s'
           _hover={{
             bg: 'rgba(255, 255, 255, 0.1)',
@@ -110,8 +111,7 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
 };
 
 export const AboutSection: React.FC = () => {
-  const bgGradient =
-    'linear(110deg, green.900 0%, black 15%, green.900 50%, black 85%)';
+ 
 
   return (
     <Box py='20' bgGradient={bgGradient} id='about'>

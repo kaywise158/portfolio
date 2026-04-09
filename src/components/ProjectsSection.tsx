@@ -16,10 +16,10 @@ import {
   getFeaturedProjects,
   getProjectsByCategory,
 } from '../data/Projects';
+import { bgGradient } from '../App';
 
 export const ProjectsSection: React.FC = () => {
-  const bgGradient =
-    'linear(110deg, green.900 0%, black 15%, green.900 50%,  black 85%, )';
+ 
 
   return (
     <Box py='20' id='projects' bgGradient={bgGradient}>
@@ -40,36 +40,36 @@ export const ProjectsSection: React.FC = () => {
           <TabList mb='8' flexWrap='wrap' justifyContent='center' gap='2'>
             <Tab
               color='gray.300'
-              _selected={{ color: 'white', bg: 'green.500' }}
-              _hover={{ bg: 'green.700' }}
+              _selected={{ color: 'white', bg: 'whiteAlpha.300' }}
+              _hover={{ bg: 'whiteAlpha.150' }}
             >
               All Projects
             </Tab>
             <Tab
               color='gray.300'
-              _selected={{ color: 'white', bg: 'green.500' }}
-              _hover={{ bg: 'green.700' }}
+              _selected={{ color: 'white', bg: 'whiteAlpha.300' }}
+              _hover={{ bg: 'whiteAlpha.150' }}
             >
               Featured
             </Tab>
             <Tab
               color='gray.300'
-              _selected={{ color: 'white', bg: 'green.500' }}
-              _hover={{ bg: 'green.700' }}
+              _selected={{ color: 'white', bg: 'whiteAlpha.300' }}
+              _hover={{ bg: 'whiteAlpha.150' }}
             >
               Web Apps
             </Tab>
             <Tab
               color='gray.300'
-              _selected={{ color: 'white', bg: 'green.500' }}
-              _hover={{ bg: 'green.700' }}
+              _selected={{ color: 'white', bg: 'whiteAlpha.300' }}
+              _hover={{ bg: 'whiteAlpha.150' }}
             >
               Full Stack
             </Tab>
             <Tab
               color='gray.300'
-              _selected={{ color: 'white', bg: 'green.500' }}
-              _hover={{ bg: 'green.700' }}
+              _selected={{ color: 'white', bg: 'whiteAlpha.300' }}
+              _hover={{ bg: 'whiteAlpha.150' }}
             >
               Mobile
             </Tab>

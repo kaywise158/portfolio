@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
       backdropFilter='blur(10px)'
       bg='rgba(0, 0, 0, 0.95)'
       borderTop='1px'
-      borderColor='green.700'
+      borderColor='whiteAlpha.150'
     >
       <Container maxW='container.xl' py='12'>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing='8' mb='8'>
@@ -64,9 +64,9 @@ export const Footer: React.FC = () => {
             <Text
               fontSize='2xl'
               fontWeight='bold'
-              bgGradient='linear(to-r, green.300, green.500)'
+            bgGradient='linear(to-r, gray.300, white)'
               bgClip='text'
-              fontFamily='"Lobster", cursive'
+              fontFamily='"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
             >
               azmuritador
             </Text>
@@ -90,10 +90,10 @@ export const Footer: React.FC = () => {
                     justifyContent='center'
                     borderRadius='md'
                     bg='rgba(255, 255, 255, 0.1)'
-                    color='green.300'
+                    color='whiteAlpha.700'
                     transition='all 0.3s'
                     _hover={{
-                      bg: 'green.500',
+                      bg: 'whiteAlpha.200',
                       color: 'white',
                       transform: 'translateY(-2px)',
                     }}
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
                   color='gray.300'
                   fontSize='sm'
                   _hover={{
-                    color: 'green.300',
+                   color: 'white' ,
                     textDecoration: 'none',
                     transform: 'translateX(4px)',
                   }}
@@ -140,14 +140,14 @@ export const Footer: React.FC = () => {
               <Text>Lagos, Nigeria</Text>
               <ChakraLink
                 href='mailto:abdulazeezmuritador9@gmail.com'
-                _hover={{ color: 'green.300' }}
+                _hover={{ color: 'white' }}
                 transition='color 0.2s'
               >
                 abdulazeezmuritador9@gmail.com
               </ChakraLink>
               <ChakraLink
                 href='tel:+2348148985591'
-                _hover={{ color: 'green.300' }}
+                _hover={{ color: 'white' }}
                 transition='color 0.2s'
               >
                 +234-8148-985-591
@@ -156,7 +156,7 @@ export const Footer: React.FC = () => {
           </VStack>
         </SimpleGrid>
 
-        <Divider borderColor='green.700' mb='8' />
+        <Divider borderColor='whiteAlpha.150' mb='8' />
 
         {/* Bottom Section */}
         <Stack
@@ -170,7 +170,7 @@ export const Footer: React.FC = () => {
           </Text>
           <HStack spacing='1' fontSize='sm' color='gray.300'>
             <Text>Built with</Text>
-            <Icon as={FaHeart} color='green.300' boxSize='4' />
+            <Icon as={FaHeart} color='gray.400' boxSize='4' />
             <Text>using React, TypeScript & Chakra UI</Text>
           </HStack>
         </Stack>

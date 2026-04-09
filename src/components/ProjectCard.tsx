@@ -23,7 +23,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Card
       variant='outline'
-      borderColor='green.700'
+      borderColor='whiteAlpha.150'
       overflow='hidden'
       bg='rgba(255, 255, 255, 0.05)'
       backdropFilter='blur(10px)'
@@ -31,7 +31,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'xl',
-        borderColor: 'green.500',
+        borderColor: 'whiteAlpha.400',
         bg: 'rgba(255, 255, 255, 0.08)',
       }}
     >
@@ -53,12 +53,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             position='absolute'
             top='4'
             right='4'
-            colorScheme='green'
             fontSize='sm'
             px='3'
             py='1'
-            bg='green.500'
-            color='white'
+           colorScheme='whiteAlpha'
+           bg='whiteAlpha.300'
+           color='white'
           >
             Featured
           </Badge>
@@ -82,10 +82,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.technologies.map((tech, index) => (
               <Badge
                 key={index}
-                colorScheme='green'
-                variant='subtle'
-                bg='rgba(72, 187, 120, 0.2)'
-                color='green.300'
+             colorScheme='whiteAlpha'
+             variant='subtle'
+             bg='whiteAlpha.100'
+             color='whiteAlpha.800'
               >
                 {tech}
               </Badge>
@@ -101,13 +101,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 leftIcon={<FaGithub />}
                 size='sm'
                 variant='outline'
-                color='green.300'
-                borderColor='green.500'
-                _hover={{
-                  bg: 'green.500',
-                  color: 'white',
-                  transform: 'translateY(-1px)',
-                }}
+              color='whiteAlpha.700'
+borderColor='whiteAlpha.400'
+_hover={{ bg: 'whiteAlpha.200', color: 'white', transform: 'translateY(-1px)' }}
                 transition='all 0.2s'
               >
                 Code
@@ -120,13 +116,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 isExternal
                 leftIcon={<FaExternalLinkAlt />}
                 size='sm'
-                colorScheme='green'
-                bg='green.500'
-                _hover={{
-                  bg: 'green.600',
-                  transform: 'translateY(-1px)',
-                }}
-                transition='all 0.2s'
+               colorScheme='whiteAlpha'
+bg='whiteAlpha.200'
+_hover={{ bg: 'whiteAlpha.300', transform: 'translateY(-1px)' }}
               >
                 Live Demo
               </Button>
