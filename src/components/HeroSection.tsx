@@ -37,15 +37,16 @@ export const HeroSection: React.FC = () => {
         >
           {/* Left Content */}
           <Stack spacing='6' flex='1' maxW={{ base: '100%', lg: '600px' }}>
+
             {/* Greeting */}
             <Text
-              fontSize='xl'
+              fontSize='sm'
               fontWeight='semibold'
-              color='gray.400'
+              color='whiteAlpha.500'
               textTransform='uppercase'
-              letterSpacing='wider'
+              letterSpacing='widest'
             >
-              Hello, I'm
+              Software Engineer
             </Text>
 
             {/* Name */}
@@ -54,16 +55,22 @@ export const HeroSection: React.FC = () => {
             </Heading>
 
             {/* Title/Role */}
-            <Heading as='h2' size='xl' color='whiteAlpha.800' fontWeight='medium'>
-              Full Stack Software Developer
+            <Heading
+              as='h2'
+              size='md'
+              color='whiteAlpha.600'
+              fontWeight='medium'
+              letterSpacing='wide'
+            >
+              Full Stack Engineer · Next.js · Node.js · TypeScript
             </Heading>
 
             {/* Description */}
-            <Text fontSize='lg' color='gray.300' lineHeight='tall'>
-              Full Stack Developer with 4+ years building production web
-              applications using Next.js, React, TypeScript, and Node.js. I
-              specialize in payment integration, real-time systems, and scalable
-              solutions that solve real-world problems.
+            <Text fontSize='lg' color='gray.400' lineHeight='tall'>
+            4+ years building products people rely on. I work across the full stack —
+            crafting responsive interfaces, designing robust APIs, and architecting
+            scalable systems with Next.js, React, TypeScript, and Node.js.
+            Clean code. Real results.
             </Text>
 
             {/* CTA Buttons */}
@@ -106,7 +113,7 @@ export const HeroSection: React.FC = () => {
                 w={{ base: '100%', sm: 'auto' }}
                 _hover={{
                   transform: 'translateY(-2px)',
-                 bg:'whiteAlpha.200',
+                  bg: 'whiteAlpha.200',
                   color: 'white',
                 }}
                 transition='all 0.2s'
@@ -119,31 +126,29 @@ export const HeroSection: React.FC = () => {
             </Stack>
 
             {/* Social Links - Desktop */}
-            <HStack spacing='4' pt='4' display={{ base: 'none', md: 'flex' }}>
+            <HStack spacing='2' pt='4' display={{ base: 'none', md: 'flex' }}>
               <Link href='https://github.com/muritador5050' isExternal>
-                <Button
+                <IconButton
+                  aria-label='GitHub'
+                  icon={<FaGithub size='20' />}
                   size='lg'
                   variant='ghost'
-                  color='white'
-                  leftIcon={<FaGithub size='24' />}
-               _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
-                >
-                  GitHub
-                </Button>
+                  color='whiteAlpha.600'
+                  _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
+                />
               </Link>
               <Link
                 href='https://linkedin.com/in/abdulazeez-muritador'
                 isExternal
               >
-                <Button
+                <IconButton
+                  aria-label='LinkedIn'
+                  icon={<FaLinkedin size='20' />}
                   size='lg'
                   variant='ghost'
-                  color='white'
-                  leftIcon={<FaLinkedin size='24' />}
-                _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
-                >
-                  LinkedIn
-                </Button>
+                  color='whiteAlpha.600'
+                  _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
+                />
               </Link>
               <Link
                 href='https://twitter.com/az'
@@ -151,31 +156,28 @@ export const HeroSection: React.FC = () => {
                 rel='noopener noreferrer'
                 isExternal
               >
-                <Button
-                  colorScheme='twitter'
+                <IconButton
+                  aria-label='Twitter'
+                  icon={<FaTwitter size='20' />}
                   size='lg'
                   variant='ghost'
-                  color='white'
-                  leftIcon={<FaTwitter size='24' />}
-                 _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
-                >
-                  Twitter
-                </Button>
+                  color='whiteAlpha.600'
+                  _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
+                />
               </Link>
               <Link href='mailto:abdulazeezmuritador9@gmail.com'>
-                <Button
+                <IconButton
+                  aria-label='Email'
+                  icon={<FaEnvelope size='20' />}
                   size='lg'
                   variant='ghost'
-                  color='white'
-                  leftIcon={<FaEnvelope size='24' />}
-                 _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
-                >
-                  Email
-                </Button>
+                  color='whiteAlpha.600'
+                  _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
+                />
               </Link>
             </HStack>
 
-            {/* Social Links - Mobile (Icon Buttons) */}
+            {/* Social Links - Mobile */}
             <Wrap
               spacing='4'
               pt='4'
@@ -186,11 +188,11 @@ export const HeroSection: React.FC = () => {
                 <Link href='https://github.com/muritador5050' isExternal>
                   <IconButton
                     aria-label='GitHub'
-                    icon={<FaGithub size='24' />}
+                    icon={<FaGithub size='20' />}
                     size='lg'
                     variant='ghost'
-                    color='white'
-                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
+                    color='whiteAlpha.600'
+                    _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -201,11 +203,11 @@ export const HeroSection: React.FC = () => {
                 >
                   <IconButton
                     aria-label='LinkedIn'
-                    icon={<FaLinkedin size='24' />}
+                    icon={<FaLinkedin size='20' />}
                     size='lg'
                     variant='ghost'
-                    color='white'
-                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
+                    color='whiteAlpha.600'
+                    _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -218,11 +220,11 @@ export const HeroSection: React.FC = () => {
                 >
                   <IconButton
                     aria-label='Twitter'
-                    icon={<FaTwitter size='24' />}
+                    icon={<FaTwitter size='20' />}
                     size='lg'
                     variant='ghost'
-                    color='white'
-                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
+                    color='whiteAlpha.600'
+                    _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -230,11 +232,11 @@ export const HeroSection: React.FC = () => {
                 <Link href='mailto:abdulazeezmuritador9@gmail.com'>
                   <IconButton
                     aria-label='Email'
-                    icon={<FaEnvelope size='24' />}
+                    icon={<FaEnvelope size='20' />}
                     size='lg'
                     variant='ghost'
-                    color='white'
-                   _hover={{ bg: 'whiteAlpha.200', color: 'white' }}
+                    color='whiteAlpha.600'
+                    _hover={{ bg: 'whiteAlpha.100', color: 'white' }}
                   />
                 </Link>
               </WrapItem>
@@ -273,12 +275,11 @@ export const HeroSection: React.FC = () => {
                 w='100%'
                 h='100%'
                 borderRadius='full'
-               bgGradient='linear(135deg, whiteAlpha.600, whiteAlpha.200, whiteAlpha.500, whiteAlpha.600)'
+                bgGradient='linear(135deg, whiteAlpha.600, whiteAlpha.200, whiteAlpha.500, whiteAlpha.600)'
                 p='8px'
                 boxShadow='2xl'
                 zIndex='1'
               >
-                {/* Profile Image */}
                 <Avatar
                   src='/profile-photo.png'
                   name='Abdulazeez'
@@ -301,13 +302,15 @@ export const HeroSection: React.FC = () => {
                 borderRadius='full'
                 boxShadow='xl'
                 border='2px solid'
-               borderColor='whiteAlpha.400'
+                borderColor='whiteAlpha.300'
                 zIndex='2'
               >
                 <Text
-                  fontWeight='bold'
-                 color='whiteAlpha.900'
-                  fontSize={{ base: 'sm', md: 'md' }}
+                  fontWeight='medium'
+                  color='whiteAlpha.800'
+                  fontSize={{ base: 'xs', md: 'sm' }}
+                  letterSpacing='wide'
+                  textTransform='uppercase'
                 >
                   Available for work
                 </Text>

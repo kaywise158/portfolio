@@ -104,7 +104,7 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ info }) => {
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'xl',
-        borderColor: 'green.500',
+        borderColor: 'whiteAlpha.400',
         bg: 'rgba(255, 255, 255, 0.08)',
       }}
       align='flex-start'
@@ -117,13 +117,13 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ info }) => {
         alignItems='center'
         justifyContent='center'
         borderRadius='lg'
-        bg='rgba(72, 187, 120, 0.2)'
-        color='green.300'
+        bg='whiteAlpha.100'
+        color='whiteAlpha.700'
       >
         <Icon as={info.icon} boxSize='6' />
       </Box>
       <VStack align='start' spacing='1' minW='0' flex='1'>
-        <Text fontSize='sm' color='green.300' fontWeight='medium'>
+        <Text fontSize='sm' color='whiteAlpha.600' fontWeight='medium'>
           {info.label}
         </Text>
         <Text
@@ -160,8 +160,6 @@ export const ContactSection: React.FC = () => {
     message: '',
   });
 
- 
-
   const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -180,7 +178,6 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -194,10 +191,8 @@ export const ContactSection: React.FC = () => {
         EMAILJS_PUBLIC_KEY
       );
 
-      // Save name for thank you message
       setSubmitterName(formData.name);
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -205,7 +200,6 @@ export const ContactSection: React.FC = () => {
         message: '',
       });
 
-      // Show thank you modal
       onOpen();
     } catch {
       toast({
@@ -225,7 +219,6 @@ export const ContactSection: React.FC = () => {
   return (
     <Box py='20' bgGradient={bgGradient} id='contact'>
       <Container maxW='container.xl'>
-        {/* Section Header */}
         <Stack spacing='4' textAlign='center' mb='16'>
           <Heading as='h2' size='2xl' color='white'>
             Get In Touch
@@ -265,11 +258,11 @@ export const ContactSection: React.FC = () => {
                       alignItems='center'
                       justifyContent='center'
                       borderRadius='lg'
-                      bg='rgba(255, 255, 255, 0.1)'
-                      color='green.300'
+                      bg='whiteAlpha.100'
+                      color='whiteAlpha.700'
                       transition='all 0.3s'
                       _hover={{
-                        bg: 'green.500',
+                        bg: 'whiteAlpha.200',
                         color: 'white',
                         transform: 'translateY(-4px)',
                       }}
@@ -306,10 +299,10 @@ export const ContactSection: React.FC = () => {
                     borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
-                    _hover={{ borderColor: 'green.500' }}
+                    _hover={{ borderColor: 'whiteAlpha.500' }}
                     _focus={{
-                      borderColor: 'green.300',
-                      boxShadow: '0 0 0 1px green.300',
+                      borderColor: 'whiteAlpha.600',
+                      boxShadow: '0 0 0 1px rgba(255,255,255,0.3)',
                     }}
                   />
                 </FormControl>
@@ -327,10 +320,10 @@ export const ContactSection: React.FC = () => {
                     borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
-                    _hover={{ borderColor: 'green.500' }}
+                    _hover={{ borderColor: 'whiteAlpha.500' }}
                     _focus={{
-                      borderColor: 'green.300',
-                      boxShadow: '0 0 0 1px green.300',
+                      borderColor: 'whiteAlpha.600',
+                      boxShadow: '0 0 0 1px rgba(255,255,255,0.3)',
                     }}
                   />
                 </FormControl>
@@ -347,10 +340,10 @@ export const ContactSection: React.FC = () => {
                     borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
-                    _hover={{ borderColor: 'green.500' }}
+                    _hover={{ borderColor: 'whiteAlpha.500' }}
                     _focus={{
-                      borderColor: 'green.300',
-                      boxShadow: '0 0 0 1px green.300',
+                      borderColor: 'whiteAlpha.600',
+                      boxShadow: '0 0 0 1px rgba(255,255,255,0.3)',
                     }}
                   />
                 </FormControl>
@@ -368,17 +361,17 @@ export const ContactSection: React.FC = () => {
                     borderColor='whiteAlpha.150'
                     color='white'
                     _placeholder={{ color: 'gray.400' }}
-                    _hover={{ borderColor: 'green.500' }}
+                    _hover={{ borderColor: 'whiteAlpha.500' }}
                     _focus={{
-                      borderColor: 'green.300',
-                      boxShadow: '0 0 0 1px green.300',
+                      borderColor: 'whiteAlpha.600',
+                      boxShadow: '0 0 0 1px rgba(255,255,255,0.3)',
                     }}
                   />
                 </FormControl>
 
                 <Button
                   type='submit'
-                  colorScheme='green'
+                  colorScheme='whiteAlpha'
                   size='lg'
                   w='full'
                   isLoading={isSubmitting}
@@ -400,7 +393,7 @@ export const ContactSection: React.FC = () => {
         <ModalContent
           bg='rgba(0, 0, 0, 0.95)'
           borderWidth='2px'
-          borderColor='green.500'
+          borderColor='whiteAlpha.400'
           borderRadius='2xl'
           p='4'
         >
@@ -414,11 +407,11 @@ export const ContactSection: React.FC = () => {
                 alignItems='center'
                 justifyContent='center'
                 borderRadius='full'
-                bg='rgba(72, 187, 120, 0.2)'
+                bg='whiteAlpha.100'
                 border='3px solid'
-                borderColor='green.500'
+                borderColor='whiteAlpha.400'
               >
-                <Icon as={FaCheckCircle} boxSize='10' color='green.400' />
+                <Icon as={FaCheckCircle} boxSize='10' color='whiteAlpha.800' />
               </Box>
               <Heading size='xl' color='white' textAlign='center'>
                 Message Sent Successfully!
@@ -428,7 +421,7 @@ export const ContactSection: React.FC = () => {
           <ModalBody>
             <VStack spacing='4' py='4'>
               <Text fontSize='lg' color='gray.300' textAlign='center'>
-                Thank you for reaching out, {submitterName}! 🎉
+                Thank you for reaching out, {submitterName}!
               </Text>
               <Text color='gray.400' textAlign='center'>
                 I've received your message and will get back to you as soon as
@@ -437,21 +430,21 @@ export const ContactSection: React.FC = () => {
               <Box
                 w='full'
                 p='4'
-                bg='rgba(72, 187, 120, 0.1)'
+                bg='whiteAlpha.50'
                 borderRadius='lg'
                 borderWidth='1px'
                 borderColor='whiteAlpha.150'
               >
-                <Text fontSize='sm' color='green.300' textAlign='center'>
-                  💡 In the meantime, feel free to check out my projects or
-                  connect with me on social media!
+                <Text fontSize='sm' color='whiteAlpha.700' textAlign='center'>
+                  In the meantime, feel free to check out my projects or connect
+                  with me on social media!
                 </Text>
               </Box>
             </VStack>
           </ModalBody>
           <ModalFooter>
             <Button
-              colorScheme='green'
+              colorScheme='whiteAlpha'
               size='lg'
               w='full'
               onClick={onClose}

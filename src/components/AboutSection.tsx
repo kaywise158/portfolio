@@ -8,6 +8,7 @@ import {
   Icon,
   VStack,
   Flex,
+  Divider,
 } from '@chakra-ui/react';
 
 import {
@@ -26,7 +27,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
   return (
     <Box
       p='6'
-      bg='rgba(255, 255, 255, 0.05)'
+      bg='rgba(255, 255, 255, 0.03)'
       borderWidth='1px'
       borderColor='whiteAlpha.150'
       borderRadius='xl'
@@ -35,8 +36,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'xl',
-        borderColor: category.color,
-        bg: 'rgba(255, 255, 255, 0.1)',
+        borderColor: 'whiteAlpha.400',
+        bg: 'rgba(255, 255, 255, 0.07)',
       }}
     >
       <VStack spacing='4' align='start'>
@@ -46,14 +47,14 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
           align='center'
           justify='center'
           borderRadius='lg'
-          bg={'whiteAlpha.100'}
+          bg='whiteAlpha.100'
         >
-          <Icon as={category.icon} boxSize='6' color={category.color} />
+          <Icon as={category.icon} boxSize='6' color='whiteAlpha.700' />
         </Flex>
-        <Heading size='md' color='white'>
+        <Heading size='sm' color='white' letterSpacing='wide'>
           {category.title}
         </Heading>
-        <Text color='gray.300' fontSize='sm'>
+        <Text color='gray.400' fontSize='sm' lineHeight='tall'>
           {category.description}
         </Text>
       </VStack>
@@ -68,8 +69,8 @@ interface SkillIconCardProps {
 const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
   return (
     <Box
-      p='6'
-      bg='rgba(255, 255, 255, 0.05)'
+      p='5'
+      bg='rgba(255, 255, 255, 0.03)'
       borderWidth='1px'
       borderColor='whiteAlpha.150'
       borderRadius='lg'
@@ -78,30 +79,28 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
       _hover={{
         transform: 'translateY(-4px)',
         boxShadow: 'lg',
-        borderColor: skill.color,
-        bg: 'rgba(255, 255, 255, 0.08)',
+        borderColor: 'whiteAlpha.400',
+        bg: 'rgba(255, 255, 255, 0.07)',
       }}
     >
       <VStack spacing='3'>
         <Flex
-          w='16'
-          h='16'
+          w='14'
+          h='14'
           align='center'
           justify='center'
           borderRadius='lg'
           bg='whiteAlpha.100'
-          transition='all 0.3s'
-          _hover={{
-            bg: 'rgba(255, 255, 255, 0.1)',
-          }}
         >
-          <Icon as={skill.icon} boxSize='8' color={skill.color} />
+          <Icon as={skill.icon} boxSize='7' color='whiteAlpha.800' />
         </Flex>
         <Text
           fontWeight='medium'
-          color='white'
-          fontSize='sm'
+          color='gray.300'
+          fontSize='xs'
           textAlign='center'
+          letterSpacing='wide'
+          textTransform='uppercase'
         >
           {skill.name}
         </Text>
@@ -111,75 +110,84 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
 };
 
 export const AboutSection: React.FC = () => {
- 
-
   return (
     <Box py='20' bgGradient={bgGradient} id='about'>
       <Container maxW='container.xl'>
+
         {/* Section Header */}
         <Stack spacing='4' textAlign='center' mb='16'>
+          <Text
+            fontSize='sm'
+            fontWeight='semibold'
+            color='whiteAlpha.500'
+            textTransform='uppercase'
+            letterSpacing='widest'
+          >
+            Who I Am
+          </Text>
           <Heading as='h2' size='2xl' color='white'>
             About Me
           </Heading>
-          <Text fontSize='lg' color='gray.300' maxW='3xl' mx='auto'>
+          <Divider borderColor='whiteAlpha.150' maxW='60px' mx='auto' />
+          <Text fontSize='lg' color='gray.400' maxW='3xl' mx='auto' lineHeight='tall'>
             I'm a passionate software engineer with expertise in building
             scalable web applications. I love solving complex problems and
             creating seamless user experiences.
           </Text>
         </Stack>
 
-        {/* About Content */}
-        <Stack spacing='16'>
-          {/* Bio Section */}
-          <Box>
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing='8' mb='12'>
-              <Stack spacing='4'>
-                <Heading size='lg' color='white'>
-                  My Journey
-                </Heading>
-                <Text color='gray.300' lineHeight='tall'>
-                  I began my tech journey by building core frontend foundations
-                  and contributing to real-world projects that strengthened my
-                  skills in modern web development. Over the past 3+ years, I’ve
-                  grown into a full-stack developer, building production-ready
-                  applications including e-commerce platforms, real-time
-                  systems, and enterprise dashboards.
-                </Text>
-                <Text color='gray.300' lineHeight='tall'>
-                  My background in Physics and Telecommunications combined with
-                  my self-taught journey in full-stack development has given me
-                  strong analytical and problem-solving skills. I believe in
-                  writing clean, maintainable code and continuously learning to
-                  deliver better solutions.
-                </Text>
-              </Stack>
+        <Stack spacing='20'>
 
-              <Stack spacing='4'>
-                <Heading size='lg' color='white'>
-                  What I Do
-                </Heading>
-                <Text color='gray.300' lineHeight='tall'>
-                  I specialize in modern JavaScript/TypeScript development with
-                  Next.js, React, and Node.js. I work with both SQL (PostgreSQL)
-                  and NoSQL (MongoDB) databases, implement secure authentication
-                  systems, and integrate payment gateways and real-time
-                  features.
-                </Text>
-                <Text color='gray.300' lineHeight='tall'>
-                  Currently expanding my skill set into Java and Spring Boot to
-                  contribute to enterprise-level backend systems. When I'm not
-                  coding, I'm learning new technologies and exploring ways to
-                  write better, more efficient code.
-                </Text>
-              </Stack>
-            </SimpleGrid>
-          </Box>
+          {/* What I Do */}
+          {/* What I Do */}
+<Box
+  p='10'
+  bg='rgba(255, 255, 255, 0.03)'
+  borderWidth='1px'
+  borderColor='whiteAlpha.150'
+  borderRadius='2xl'
+  backdropFilter='blur(10px)'
+>
+  <Stack spacing='4'>
+    <Text
+      fontSize='xs'
+      fontWeight='semibold'
+      color='whiteAlpha.500'
+      textTransform='uppercase'
+      letterSpacing='widest'
+    >
+      Expertise
+    </Text>
+    <Heading size='md' color='white'>
+      What I Do
+    </Heading>
+    <Text color='gray.400' lineHeight='tall' fontSize='sm'>
+      I specialize in modern JavaScript/TypeScript development with
+      Next.js, React, and Node.js. I work with both SQL (PostgreSQL)
+      and NoSQL (MongoDB) databases, implement secure authentication
+      systems, and integrate payment gateways and real-time features.
+      I also build enterprise-level backend systems with Java and
+      Spring Boot.
+    </Text>
+  </Stack>
+</Box>
 
-          {/* Skill Categories */}
+          {/* What I'm Offering */}
           <Box>
-            <Heading size='lg' color='white' mb='8' textAlign='center'>
-              What I'm Offering
-            </Heading>
+            <Stack spacing='2' textAlign='center' mb='10'>
+              <Text
+                fontSize='xs'
+                fontWeight='semibold'
+                color='whiteAlpha.500'
+                textTransform='uppercase'
+                letterSpacing='widest'
+              >
+                Services
+              </Text>
+              <Heading size='lg' color='white'>
+                What I'm Offering
+              </Heading>
+            </Stack>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing='6'>
               {skillCategories.map((category, index) => (
                 <SkillCard key={index} category={category} />
@@ -189,15 +197,27 @@ export const AboutSection: React.FC = () => {
 
           {/* Technical Skills */}
           <Box>
-            <Heading size='lg' color='white' mb='8' textAlign='center'>
-              Technical Skills
-            </Heading>
-            <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing='6'>
+            <Stack spacing='2' textAlign='center' mb='10'>
+              <Text
+                fontSize='xs'
+                fontWeight='semibold'
+                color='whiteAlpha.500'
+                textTransform='uppercase'
+                letterSpacing='widest'
+              >
+                Stack
+              </Text>
+              <Heading size='lg' color='white'>
+                Technical Skills
+              </Heading>
+            </Stack>
+            <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing='4'>
               {skills.map((skill, index) => (
                 <SkillIconCard key={index} skill={skill} />
               ))}
             </SimpleGrid>
           </Box>
+
         </Stack>
       </Container>
     </Box>
