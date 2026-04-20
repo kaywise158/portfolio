@@ -41,7 +41,7 @@ const socialLinks = [
   },
   {
     icon: FaTwitter,
-    href: "https://twitter.com/Az",
+    href: "https://x.com/Asadoye5050",
     label: "Twitter",
   },
   { icon: FaEnvelope, href: "mailto:your.email@example.com", label: "Email" },
