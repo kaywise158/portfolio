@@ -49,7 +49,7 @@ export const projects: Project[] = [
     name: "Roamify",
     description:
       "An adventure tour booking platform where users can discover, plan, and book curated travel experiences. Features tour listings, itinerary management, and a clean booking flow built for travelers and tour operators alike.",
-    images: ["/roamify/roamify001.png"],
+    images: ["/roamify/roamify.png"],
     technologies: [
       "Next.js",
       "TypeScript",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
       "Chakra UI",
     ],
     githubUrl: "",
-    liveUrl: "",
+    liveUrl: "https://roamify-tours.netlify.app",
     featured: true,
     category: "fullstack",
   },

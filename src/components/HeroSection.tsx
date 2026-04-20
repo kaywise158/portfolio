@@ -66,7 +66,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Description */}
             <Text fontSize="lg" color="gray.400" lineHeight="tall">
-              4+ years building products people rely on. I work across the full
+              4 years building products people rely on. I work across the full
               stack — crafting responsive interfaces, designing robust APIs, and
               architecting scalable systems with Next.js, React, TypeScript, and
               Node.js. Clean code. Real results.
@@ -280,13 +280,18 @@ export const HeroSection: React.FC = () => {
                 zIndex="1"
               >
                 <Avatar
-                  src="/profile-photo.png"
+                  src="/portfolio-profile.webp"
                   name="Abdulazeez"
                   borderRadius="full"
                   w="100%"
                   h="100%"
                   border="none"
                   position="relative"
+                  sx={{
+                    "& img": {
+                      objectPosition: "center 15%",
+                    },
+                  }}
                 />
               </Box>
 

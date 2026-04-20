@@ -12,7 +12,7 @@ import {
   Link,
   Box,
 } from "@chakra-ui/react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdConstruction } from "react-icons/md";
 import type { Project } from "../types/project";
 
@@ -129,26 +129,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </HStack>
 
           <HStack spacing="3" pt="2">
-            {project.githubUrl && (
-              <Button
-                as={Link}
-                href={project.githubUrl}
-                isExternal
-                leftIcon={<FaGithub />}
-                size="sm"
-                variant="outline"
-                color="whiteAlpha.700"
-                borderColor="whiteAlpha.400"
-                _hover={{
-                  bg: "whiteAlpha.200",
-                  color: "white",
-                  transform: "translateY(-1px)",
-                }}
-                transition="all 0.2s"
-              >
-                Code
-              </Button>
-            )}
             {project.liveUrl && (
               <Button
                 as={Link}
