@@ -280,7 +280,7 @@ export const HeroSection: React.FC = () => {
                 zIndex="1"
               >
                 <Avatar
-                  src="/portfolio-profile.webp"
+                  src="/freelance-profile.webp"
                   name="Abdulazeez"
                   borderRadius="full"
                   w="100%"
