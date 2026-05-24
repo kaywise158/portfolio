@@ -17,6 +17,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { bgGradient } from "../App";
 import { BsArrowUpRight } from "react-icons/bs";
+import { yearsOfExperience } from "../utils/experience";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -36,18 +37,13 @@ export const HeroSection: React.FC = () => {
           gap="12"
         >
           {/* Left Content */}
-          <Stack spacing="6" flex="1" maxW={{ base: "100%", lg: "600px" }}>
-            {/* Greeting */}
-            <Text
-              fontSize="sm"
-              fontWeight="semibold"
-              color="whiteAlpha.500"
-              textTransform="uppercase"
-              letterSpacing="widest"
-            >
-              Software Engineer
-            </Text>
-
+          <Stack
+            data-aos="fade-right"
+            data-aos-delay="100"
+            spacing="6"
+            flex="1"
+            maxW={{ base: "100%", lg: "600px" }}
+          >
             {/* Name */}
             <Heading as="h1" size="3xl" color="white" lineHeight="1.2">
               Abdulazeez Muritador
@@ -61,15 +57,17 @@ export const HeroSection: React.FC = () => {
               fontWeight="medium"
               letterSpacing="wide"
             >
-              Full Stack Engineer · Next.js · Node.js · TypeScript
+              Full Stack Developer · JavaScript · TypeScript · Java · Node.js ·
+              Next.js
             </Heading>
 
             {/* Description */}
             <Text fontSize="lg" color="gray.400" lineHeight="tall">
-              4 years building products people rely on. I work across the full
-              stack — crafting responsive interfaces, designing robust APIs, and
-              architecting scalable systems with Next.js, React, TypeScript, and
-              Node.js. Clean code. Real results.
+              {yearsOfExperience}+ years building products people rely on. I
+              work across the full-stack crafting responsive interfaces,
+              designing robust APIs, and architecting scalable systems using
+              JavaScript, Java, Next.js, React, and Node.js. Clean code. Real
+              results.
             </Text>
 
             {/* CTA Buttons */}
@@ -212,7 +210,7 @@ export const HeroSection: React.FC = () => {
               </WrapItem>
               <WrapItem>
                 <Link
-                  href="https://twitter.com/az"
+                  href="https://x.com/Asadoye5050"
                   target="_blank"
                   rel="noopener noreferrer"
                   isExternal
@@ -249,6 +247,8 @@ export const HeroSection: React.FC = () => {
             justifyContent={{ base: "flex-end", lg: "center" }}
             alignItems="center"
             w="100%"
+            data-aos="fade-left"
+            data-aos-delay="200"
           >
             <Box
               position="relative"
@@ -308,6 +308,8 @@ export const HeroSection: React.FC = () => {
                 border="2px solid"
                 borderColor="whiteAlpha.300"
                 zIndex="2"
+                data-aos="zoom-in"
+                data-aos-delay="500"
               >
                 <Text
                   fontWeight="medium"

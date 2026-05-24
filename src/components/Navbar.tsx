@@ -15,20 +15,22 @@ import {
   DrawerCloseButton,
   VStack,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 interface NavLink {
   name: string;
-  href: string;
+  id: string;
 }
 
 const navLinks: NavLink[] = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", id: "about" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];
+
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 export const Navbar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,8 +50,8 @@ export const Navbar: React.FC = () => {
         <Flex h="16" alignItems="center" justifyContent="space-between">
           {/* Logo */}
           <ChakraLink
-            as={RouterLink}
-            to="/"
+            onClick={() => scrollTo("home")}
+            cursor="pointer"
             _hover={{ textDecoration: "none" }}
           >
             <Text
@@ -68,8 +70,8 @@ export const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <ChakraLink
                 key={link.name}
-                as={RouterLink}
-                to={link.href}
+                onClick={() => scrollTo(link.id)}
+                cursor="pointer"
                 px="4"
                 py="2"
                 rounded="md"
@@ -90,7 +92,6 @@ export const Navbar: React.FC = () => {
 
           {/* Right Side Actions */}
           <HStack spacing="2">
-            {/* Mobile menu button */}
             <IconButton
               size="md"
               icon={<GiHamburgerMenu />}
@@ -131,8 +132,11 @@ export const Navbar: React.FC = () => {
               {navLinks.map((link) => (
                 <ChakraLink
                   key={link.name}
-                  as={RouterLink}
-                  to={link.href}
+                  onClick={() => {
+                    scrollTo(link.id);
+                    onClose();
+                  }}
+                  cursor="pointer"
                   px="4"
                   py="3"
                   rounded="md"
@@ -145,7 +149,6 @@ export const Navbar: React.FC = () => {
                     color: "white",
                   }}
                   transition="all 0.2s"
-                  onClick={onClose}
                 >
                   {link.name}
                 </ChakraLink>

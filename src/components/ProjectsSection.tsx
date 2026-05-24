@@ -23,19 +23,26 @@ export const ProjectsSection: React.FC = () => {
     <Box py="20" id="projects" bgGradient={bgGradient}>
       <Container maxW="container.xl">
         {/* Section Header */}
-        <Box textAlign="center" mb="12">
+        <Box textAlign="center" mb="12" data-aos="fade-up">
           <Heading as="h2" size="2xl" mb="4" color="white">
             My Projects
           </Heading>
           <Text fontSize="lg" color="gray.300" maxW="2xl" mx="auto">
-            Here are some of my side projects that showcase my skills in
-            software development and engineering.
+            A selection of projects that demonstrate my ability to build
+            real-world applications across the full stack.
           </Text>
         </Box>
 
         {/* Tabs for filtering */}
         <Tabs variant="soft-rounded" colorScheme="green" align="center">
-          <TabList mb="8" flexWrap="wrap" justifyContent="center" gap="2">
+          <TabList
+            mb="8"
+            flexWrap="wrap"
+            justifyContent="center"
+            gap="2"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <Tab
               color="gray.300"
               _selected={{ color: "white", bg: "whiteAlpha.300" }}
@@ -77,8 +84,14 @@ export const ProjectsSection: React.FC = () => {
             {/* All Projects */}
             <TabPanel>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="8">
-                {projects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {projects.map((project, index) => (
+                  <Box
+                    key={project.id}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <ProjectCard project={project} />
+                  </Box>
                 ))}
               </SimpleGrid>
             </TabPanel>
@@ -86,8 +99,14 @@ export const ProjectsSection: React.FC = () => {
             {/* Featured Projects */}
             <TabPanel>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="8">
-                {getFeaturedProjects().map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {getFeaturedProjects().map((project, index) => (
+                  <Box
+                    key={project.id}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <ProjectCard project={project} />
+                  </Box>
                 ))}
               </SimpleGrid>
             </TabPanel>
@@ -95,8 +114,14 @@ export const ProjectsSection: React.FC = () => {
             {/* Web Apps */}
             <TabPanel>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="8">
-                {getProjectsByCategory("web").map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {getProjectsByCategory("web").map((project, index) => (
+                  <Box
+                    key={project.id}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <ProjectCard project={project} />
+                  </Box>
                 ))}
               </SimpleGrid>
             </TabPanel>
@@ -104,8 +129,14 @@ export const ProjectsSection: React.FC = () => {
             {/* Full Stack */}
             <TabPanel>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="8">
-                {getProjectsByCategory("fullstack").map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {getProjectsByCategory("fullstack").map((project, index) => (
+                  <Box
+                    key={project.id}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <ProjectCard project={project} />
+                  </Box>
                 ))}
               </SimpleGrid>
             </TabPanel>
@@ -113,8 +144,14 @@ export const ProjectsSection: React.FC = () => {
             {/* Mobile */}
             <TabPanel>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="8">
-                {getProjectsByCategory("mobile").map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {getProjectsByCategory("mobile").map((project, index) => (
+                  <Box
+                    key={project.id}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <ProjectCard project={project} />
+                  </Box>
                 ))}
               </SimpleGrid>
             </TabPanel>

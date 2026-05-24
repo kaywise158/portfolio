@@ -11,7 +11,6 @@ import {
   VStack,
   Heading,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
 import {
   FaGithub,
   FaLinkedin,
@@ -22,14 +21,13 @@ import {
 
 interface FooterLink {
   name: string;
-  href: string;
+  id: string;
 }
 
 const quickLinks: FooterLink[] = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", id: "about" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];
 
 const socialLinks = [
@@ -44,8 +42,16 @@ const socialLinks = [
     href: "https://x.com/Asadoye5050",
     label: "Twitter",
   },
-  { icon: FaEnvelope, href: "mailto:your.email@example.com", label: "Email" },
+  {
+    icon: FaEnvelope,
+    href: "mailto:abdulazeezmuritador9@gmail.com",
+    label: "Email",
+  },
 ];
+
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -71,8 +77,8 @@ export const Footer: React.FC = () => {
               azmuritador
             </Text>
             <Text color="gray.300" fontSize="sm">
-              Full Stack Software Engineer passionate about creating innovative
-              solutions and beautiful user experiences.
+              Full Stack Developer building reliable, scalable applications and
+              clean user experiences across the entire stack.
             </Text>
             <HStack spacing="3">
               {socialLinks.map((social, index) => (
@@ -114,8 +120,8 @@ export const Footer: React.FC = () => {
               {quickLinks.map((link, index) => (
                 <ChakraLink
                   key={index}
-                  as={RouterLink}
-                  to={link.href}
+                  onClick={() => scrollTo(link.id)}
+                  cursor="pointer"
                   color="gray.300"
                   fontSize="sm"
                   _hover={{

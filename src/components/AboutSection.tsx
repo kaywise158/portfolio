@@ -18,6 +18,7 @@ import {
   type SkillCategory,
 } from "../utils/Skills";
 import { bgGradient } from "../App";
+import { yearsOfExperience } from "../utils/experience";
 
 interface SkillCardProps {
   category: SkillCategory;
@@ -114,7 +115,7 @@ export const AboutSection: React.FC = () => {
     <Box py="20" bgGradient={bgGradient} id="about">
       <Container maxW="container.xl">
         {/* Section Header */}
-        <Stack spacing="4" textAlign="center" mb="16">
+        <Stack spacing="4" textAlign="center" mb="16" data-aos="fade-up">
           <Text
             fontSize="sm"
             fontWeight="semibold"
@@ -135,14 +136,14 @@ export const AboutSection: React.FC = () => {
             mx="auto"
             lineHeight="tall"
           >
-            I'm a passionate software engineer with expertise in building
-            scalable web applications. I love solving complex problems and
-            creating seamless user experiences.
+            A Full Stack Developer with {yearsOfExperience}+ years of experience
+            building scalable web applications. I thrive on solving complex
+            problems and delivering seamless user experiences across the entire
+            stack.
           </Text>
         </Stack>
 
         <Stack spacing="20">
-          {/* What I Do */}
           {/* What I Do */}
           <Box
             p="10"
@@ -151,6 +152,8 @@ export const AboutSection: React.FC = () => {
             borderColor="whiteAlpha.150"
             borderRadius="2xl"
             backdropFilter="blur(10px)"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <Stack spacing="4">
               <Text
@@ -165,20 +168,20 @@ export const AboutSection: React.FC = () => {
               <Heading size="md" color="white">
                 What I Do
               </Heading>
-              <Text color="gray.400" lineHeight="tall" fontSize="sm">
-                I specialize in modern JavaScript/TypeScript development with
-                Next.js, React, and Node.js. I work with both SQL (PostgreSQL)
-                and NoSQL (MongoDB) databases, implement secure authentication
-                systems, and integrate payment gateways and real-time features.
-                I also build enterprise-level backend systems with Java and
-                Spring Boot.
+              <Text color="gray.400" lineHeight="tall" fontSize="lg">
+                I specialize in modern JavaScript and TypeScript development
+                with Next.js, React, and Node.js, alongside Java and Spring Boot
+                for enterprise-level backend systems. I work with both SQL
+                (PostgreSQL) and NoSQL (MongoDB) databases, implement secure
+                authentication systems, and integrate payment gateways and
+                real-time features.
               </Text>
             </Stack>
           </Box>
 
           {/* What I'm Offering */}
           <Box>
-            <Stack spacing="2" textAlign="center" mb="10">
+            <Stack spacing="2" textAlign="center" mb="10" data-aos="fade-up">
               <Text
                 fontSize="xs"
                 fontWeight="semibold"
@@ -194,14 +197,20 @@ export const AboutSection: React.FC = () => {
             </Stack>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="6">
               {skillCategories.map((category, index) => (
-                <SkillCard key={index} category={category} />
+                <Box
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <SkillCard category={category} />
+                </Box>
               ))}
             </SimpleGrid>
           </Box>
 
           {/* Technical Skills */}
           <Box>
-            <Stack spacing="2" textAlign="center" mb="10">
+            <Stack spacing="2" textAlign="center" mb="10" data-aos="fade-up">
               <Text
                 fontSize="xs"
                 fontWeight="semibold"
@@ -217,7 +226,13 @@ export const AboutSection: React.FC = () => {
             </Stack>
             <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing="4">
               {skills.map((skill, index) => (
-                <SkillIconCard key={index} skill={skill} />
+                <Box
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-delay={Math.min(index * 50, 400)}
+                >
+                  <SkillIconCard skill={skill} />
+                </Box>
               ))}
             </SimpleGrid>
           </Box>

@@ -219,7 +219,8 @@ export const ContactSection: React.FC = () => {
   return (
     <Box py="20" bgGradient={bgGradient} id="contact">
       <Container maxW="container.xl">
-        <Stack spacing="4" textAlign="center" mb="16">
+        {/* Section Header */}
+        <Stack spacing="4" textAlign="center" mb="16" data-aos="fade-up">
           <Heading as="h2" size="2xl" color="white">
             Get In Touch
           </Heading>
@@ -232,19 +233,25 @@ export const ContactSection: React.FC = () => {
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
           {/* Left Side - Contact Info */}
           <Stack spacing="8">
-            <Box>
+            <Box data-aos="fade-right">
               <Heading size="lg" color="white" mb="6">
                 Contact Information
               </Heading>
               <Stack spacing="4">
                 {contactInfo.map((info, index) => (
-                  <ContactInfoCard key={index} info={info} />
+                  <Box
+                    key={index}
+                    data-aos="fade-right"
+                    data-aos-delay={index * 100}
+                  >
+                    <ContactInfoCard info={info} />
+                  </Box>
                 ))}
               </Stack>
             </Box>
 
             {/* Social Links */}
-            <Box>
+            <Box data-aos="fade-right" data-aos-delay="300">
               <Heading size="md" color="white" mb="4">
                 Follow Me
               </Heading>
@@ -284,6 +291,8 @@ export const ContactSection: React.FC = () => {
             backdropFilter="blur(10px)"
             border="1px solid"
             borderColor="whiteAlpha.150"
+            data-aos="fade-left"
+            data-aos-delay="200"
           >
             <form onSubmit={handleSubmit}>
               <Stack spacing="6">
