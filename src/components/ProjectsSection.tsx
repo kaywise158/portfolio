@@ -18,6 +18,8 @@ import {
 } from "../data/Projects";
 import { bgGradient } from "../App";
 
+const animations = ["fade-right", "fade-left"];
+
 export const ProjectsSection: React.FC = () => {
   return (
     <Box py="20" id="projects" bgGradient={bgGradient}>
@@ -87,7 +89,7 @@ export const ProjectsSection: React.FC = () => {
                 {projects.map((project, index) => (
                   <Box
                     key={project.id}
-                    data-aos="fade-up"
+                    data-aos={animations[index % animations.length]}
                     data-aos-delay={index * 100}
                   >
                     <ProjectCard project={project} />
