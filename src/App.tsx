@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <Box overflow="hidden" minHeight="100vh">
+    <Box overflowX="hidden" minHeight="100vh">
       <Navbar />
       <HeroSection />
       <AboutSection />
