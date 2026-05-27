@@ -9,322 +9,283 @@ import {
   Link,
   Flex,
   Avatar,
-  IconButton,
-  Wrap,
-  WrapItem,
+  Icon,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { HiDownload } from "react-icons/hi";
-import { bgGradient } from "../App";
+
+import {
+  FaReact,
+  FaNodeJs,
+  FaJsSquare,
+  FaHtml5,
+  FaCss3Alt,
+} from "react-icons/fa";
+
+import { SiExpress, SiMongodb } from "react-icons/si";
 import { BsArrowUpRight } from "react-icons/bs";
+
 import { yearsOfExperience } from "../utils/experience";
+import scrollTo from "../utils/scrollTo";
 
 export const HeroSection: React.FC = () => {
   return (
     <Box
-      bgGradient={bgGradient}
       minH="100vh"
       display="flex"
       alignItems="center"
-      py="20"
+      position="relative"
+      overflow="hidden"
+      bg="#08142B"
       id="home"
     >
-      <Container maxW="container.xl">
+      {/* Background Glow */}
+      <Box
+        position="absolute"
+        top="50%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+        w="700px"
+        h="700px"
+        bg="radial-gradient(circle, rgba(66,153,225,0.12) 0%, rgba(236,72,153,0.08) 40%, transparent 70%)"
+        filter="blur(80px)"
+        zIndex={0}
+      />
+
+      <Container maxW="container.xl" position="relative" zIndex={1}>
         <Flex
           direction={{ base: "column-reverse", lg: "row" }}
           align="center"
           justify="space-between"
-          gap="12"
+          gap={{ base: 16, lg: 10 }}
         >
-          {/* Left Content */}
+          {/* LEFT SIDE */}
           <Stack
+            flex="1"
+            spacing="6"
+            maxW={{ base: "100%", lg: "580px" }}
             data-aos="fade-right"
             data-aos-delay="100"
-            spacing="6"
-            flex="1"
-            maxW={{ base: "100%", lg: "600px" }}
           >
-            {/* Name */}
-            <Heading as="h1" size="3xl" color="white" lineHeight="1.2">
-              Abdulazeez Muritador
-            </Heading>
-
-            {/* Title/Role */}
             <Heading
-              as="h2"
-              size="md"
-              color="whiteAlpha.600"
-              fontWeight="medium"
-              letterSpacing="wide"
+              color="white"
+              fontWeight="700"
+              lineHeight="1"
+              fontSize={{ base: "4rem", md: "5rem", lg: "6rem" }}
+              letterSpacing="-2px"
             >
-              Full Stack Developer · JavaScript · TypeScript · Java · Node.js ·
-              Next.js
+              Hi, I'm
             </Heading>
 
-            {/* Description */}
-            <Text fontSize="lg" color="gray.400" lineHeight="tall">
-              {yearsOfExperience}+ years building products people rely on. I
-              work across the full-stack crafting responsive interfaces,
-              designing robust APIs, and architecting scalable systems using
-              JavaScript, Java, Next.js, React, and Node.js. Clean code. Real
-              results.
+            <Heading
+              mt="-2"
+              fontWeight="800"
+              lineHeight="1"
+              letterSpacing="-2px"
+              fontSize={{ base: "3.2rem", md: "4.5rem", lg: "5.5rem" }}
+              bgGradient="linear(to-r, #3B82F6, #A855F7, #EF4444)"
+              bgClip="text"
+            >
+              Abdulazeez
+              <br />
+              Muritador
+            </Heading>
+
+            <Text
+              color="whiteAlpha.800"
+              fontSize={{ base: "md", md: "xl" }}
+              lineHeight="1.8"
+              maxW="520px"
+            >
+              {yearsOfExperience}+ years building scalable full-stack
+              applications using React, Node.js, Express, MongoDB, Java, and
+              Spring Boot. I focus on clean architecture, high performance, and
+              seamless user experiences.
             </Text>
 
-            {/* CTA Buttons */}
-            <Stack
-              direction={{ base: "column", sm: "row" }}
-              spacing="4"
+            {/* BUTTONS */}
+            <HStack
+              spacing="5"
               pt="4"
-              w={{ base: "100%", sm: "auto" }}
+              flexWrap="wrap"
+              align={{ base: "stretch", sm: "center" }}
             >
+              <Button
+                onClick={() => scrollTo("projects")}
+                size="lg"
+                px="10"
+                h="60px"
+                borderRadius="full"
+                fontWeight="700"
+                color="white"
+                bgGradient="linear(to-r, #3B82F6, #EF4444)"
+                _hover={{
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 10px 30px rgba(59,130,246,0.35)",
+                }}
+                transition="all 0.3s ease"
+              >
+                View Projects
+              </Button>
+
               <Button
                 as={Link}
                 href="https://wa.me/2348148985591?text=Hello%20I%20would%20like%20to%20work%20with%20you"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
-                colorScheme="whiteAlpha"
-                px="8"
-                w={{ base: "100%", sm: "auto" }}
+                h="60px"
+                px="10"
+                borderRadius="full"
+                variant="outline"
+                borderColor="#2563EB"
+                color="#3B82F6"
+                borderWidth="2px"
+                rightIcon={<BsArrowUpRight />}
                 _hover={{
                   textDecoration: "none",
-                  transform: "translateY(-2px)",
+                  bg: "rgba(59,130,246,0.08)",
+                  transform: "translateY(-3px)",
                 }}
-                transition="all 0.2s"
-                display="flex"
-                alignItems="center"
-                gap={2}
+                transition="all 0.3s ease"
               >
-                Let's Talk <BsArrowUpRight size={16} />
+                Let&apos;s Collaborate
               </Button>
-              <Button
-                as={Link}
-                href="/resume.pdf"
-                download
-                size="lg"
-                variant="outline"
-                color="white"
-                borderColor="whiteAlpha.500"
-                leftIcon={<HiDownload />}
-                px="8"
-                w={{ base: "100%", sm: "auto" }}
-                _hover={{
-                  transform: "translateY(-2px)",
-                  bg: "whiteAlpha.200",
-                  color: "white",
-                }}
-                transition="all 0.2s"
-                isDisabled={true}
-                pointerEvents="none"
-                opacity={0.4}
-              >
-                Download CV
-              </Button>
-            </Stack>
-
-            {/* Social Links - Desktop */}
-            <HStack spacing="2" pt="4" display={{ base: "none", md: "flex" }}>
-              <Link href="https://github.com/muritador5050" isExternal>
-                <IconButton
-                  aria-label="GitHub"
-                  icon={<FaGithub size="20" />}
-                  size="lg"
-                  variant="ghost"
-                  color="whiteAlpha.600"
-                  _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/abdulazeez-muritador"
-                isExternal
-              >
-                <IconButton
-                  aria-label="LinkedIn"
-                  icon={<FaLinkedin size="20" />}
-                  size="lg"
-                  variant="ghost"
-                  color="whiteAlpha.600"
-                  _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                />
-              </Link>
-              <Link
-                href="https://twitter.com/az"
-                target="_blank"
-                rel="noopener noreferrer"
-                isExternal
-              >
-                <IconButton
-                  aria-label="Twitter"
-                  icon={<FaTwitter size="20" />}
-                  size="lg"
-                  variant="ghost"
-                  color="whiteAlpha.600"
-                  _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                />
-              </Link>
-              <Link href="mailto:abdulazeezmuritador9@gmail.com">
-                <IconButton
-                  aria-label="Email"
-                  icon={<FaEnvelope size="20" />}
-                  size="lg"
-                  variant="ghost"
-                  color="whiteAlpha.600"
-                  _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                />
-              </Link>
             </HStack>
-
-            {/* Social Links - Mobile */}
-            <Wrap
-              spacing="4"
-              pt="4"
-              display={{ base: "flex", md: "none" }}
-              justify="center"
-            >
-              <WrapItem>
-                <Link href="https://github.com/muritador5050" isExternal>
-                  <IconButton
-                    aria-label="GitHub"
-                    icon={<FaGithub size="20" />}
-                    size="lg"
-                    variant="ghost"
-                    color="whiteAlpha.600"
-                    _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                  />
-                </Link>
-              </WrapItem>
-              <WrapItem>
-                <Link
-                  href="https://linkedin.com/in/abdulazeez-muritador"
-                  isExternal
-                >
-                  <IconButton
-                    aria-label="LinkedIn"
-                    icon={<FaLinkedin size="20" />}
-                    size="lg"
-                    variant="ghost"
-                    color="whiteAlpha.600"
-                    _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                  />
-                </Link>
-              </WrapItem>
-              <WrapItem>
-                <Link
-                  href="https://x.com/Asadoye5050"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  isExternal
-                >
-                  <IconButton
-                    aria-label="Twitter"
-                    icon={<FaTwitter size="20" />}
-                    size="lg"
-                    variant="ghost"
-                    color="whiteAlpha.600"
-                    _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                  />
-                </Link>
-              </WrapItem>
-              <WrapItem>
-                <Link href="mailto:abdulazeezmuritador9@gmail.com">
-                  <IconButton
-                    aria-label="Email"
-                    icon={<FaEnvelope size="20" />}
-                    size="lg"
-                    variant="ghost"
-                    color="whiteAlpha.600"
-                    _hover={{ bg: "whiteAlpha.100", color: "white" }}
-                  />
-                </Link>
-              </WrapItem>
-            </Wrap>
           </Stack>
 
-          {/* Right Content - Image */}
-          <Box
+          {/* RIGHT SIDE */}
+          <Flex
             flex="1"
-            display="flex"
-            justifyContent={{ base: "flex-end", lg: "center" }}
-            alignItems="center"
-            w="100%"
+            justify="center"
+            align="center"
+            position="relative"
             data-aos="fade-left"
             data-aos-delay="200"
           >
             <Box
               position="relative"
-              w={{ base: "250px", sm: "300px", md: "400px" }}
-              h={{ base: "250px", sm: "300px", md: "400px" }}
+              w={{ base: "280px", md: "450px" }}
+              h={{ base: "280px", md: "450px" }}
             >
-              {/* Background Decoration */}
+              {/* OUTER GLOW */}
               <Box
                 position="absolute"
-                top="0"
-                right="0"
-                w="100%"
-                h="100%"
-                bg="whiteAlpha.300"
+                inset="0"
                 borderRadius="full"
-                opacity="0.1"
-                filter="blur(40px)"
+                bg="radial-gradient(circle, rgba(59,130,246,0.25), rgba(236,72,153,0.08), transparent)"
+                filter="blur(30px)"
+                transform="scale(1.15)"
               />
 
-              {/* Gradient Border Container */}
+              {/* PROFILE IMAGE */}
               <Box
                 position="relative"
                 w="100%"
                 h="100%"
                 borderRadius="full"
-                bgGradient="linear(135deg, whiteAlpha.600, whiteAlpha.200, whiteAlpha.500, whiteAlpha.600)"
-                p="8px"
-                boxShadow="2xl"
-                zIndex="1"
+                overflow="hidden"
+                bg="black"
+                boxShadow="0 0 80px rgba(59,130,246,0.2)"
               >
                 <Avatar
-                  src="/freelance-profile.webp"
+                  src="/my-profile-image.webp"
                   name="Abdulazeez"
-                  borderRadius="full"
                   w="100%"
                   h="100%"
-                  border="none"
-                  position="relative"
+                  borderRadius="full"
                   sx={{
                     "& img": {
-                      objectPosition: "center 15%",
+                      objectFit: "cover",
+                      objectPosition: "center 20%",
+                      mixBlendMode: "screen",
                     },
                   }}
                 />
               </Box>
 
-              {/* Floating Badge */}
-              <Box
-                position="absolute"
-                bottom={{ base: "4", md: "8" }}
-                right={{ base: "-2", md: "-4" }}
-                bgGradient={bgGradient}
-                px={{ base: "4", md: "6" }}
-                py={{ base: "2", md: "3" }}
-                borderRadius="full"
-                boxShadow="xl"
-                border="2px solid"
-                borderColor="whiteAlpha.300"
-                zIndex="2"
-                data-aos="zoom-in"
-                data-aos-delay="500"
-              >
-                <Text
-                  fontWeight="medium"
-                  color="whiteAlpha.800"
-                  fontSize={{ base: "xs", md: "sm" }}
-                  letterSpacing="wide"
-                  textTransform="uppercase"
+              {/* FLOATING ICONS */}
+              {[
+                {
+                  icon: FaReact,
+                  top: "5%",
+                  right: "-2%",
+                },
+                {
+                  icon: FaNodeJs,
+                  top: "50%",
+                  right: "-10%",
+                },
+                {
+                  icon: FaJsSquare,
+                  top: "45%",
+                  left: "-10%",
+                },
+                {
+                  icon: FaCss3Alt,
+                  bottom: "0%",
+                  left: "10%",
+                },
+                {
+                  icon: FaHtml5,
+                  bottom: "-2%",
+                  right: "5%",
+                },
+                {
+                  icon: SiExpress,
+                  top: "10%",
+                  left: "0%",
+                },
+                {
+                  icon: SiMongodb,
+                  bottom: "15%",
+                  left: "-5%",
+                },
+              ].map((item, index) => (
+                <Flex
+                  key={index}
+                  position="absolute"
+                  top={item.top}
+                  bottom={item.bottom}
+                  left={item.left}
+                  right={item.right}
+                  w={{ base: "52px", md: "62px" }}
+                  h={{ base: "52px", md: "62px" }}
+                  borderRadius="full"
+                  bg="rgba(59,130,246,0.12)"
+                  border="1px solid rgba(59,130,246,0.15)"
+                  backdropFilter="blur(10px)"
+                  align="center"
+                  justify="center"
+                  boxShadow="0 0 20px rgba(59,130,246,0.12)"
+                  animation={`float ${3 + index * 0.3}s ease-in-out infinite`}
                 >
-                  Available for work
-                </Text>
-              </Box>
+                  <Icon
+                    as={item.icon}
+                    boxSize={{ base: 6, md: 7 }}
+                    color="#3B82F6"
+                  />
+                </Flex>
+              ))}
             </Box>
-          </Box>
+          </Flex>
         </Flex>
       </Container>
+
+      {/* FLOAT ANIMATION */}
+      <style>
+        {`
+          @keyframes float {
+            0% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+            100% {
+              transform: translateY(0px);
+            }
+          }
+        `}
+      </style>
     </Box>
   );
 };

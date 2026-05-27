@@ -36,8 +36,8 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { type IconType } from "react-icons";
-import { bgGradient } from "../App";
 
+// Contact information and social links data
 interface ContactInfo {
   icon: IconType;
   label: string;
@@ -217,7 +217,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <Box py="20" bgGradient={bgGradient} id="contact">
+    <Box py="20" id="contact">
       <Container maxW="container.xl">
         {/* Section Header */}
         <Stack spacing="4" textAlign="center" mb="16" data-aos="fade-up">

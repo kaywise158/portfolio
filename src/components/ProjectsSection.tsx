@@ -16,13 +16,12 @@ import {
   getFeaturedProjects,
   getProjectsByCategory,
 } from "../data/Projects";
-import { bgGradient } from "../App";
 
 const animations = ["fade-right", "fade-left"];
 
 export const ProjectsSection: React.FC = () => {
   return (
-    <Box py="20" id="projects" bgGradient={bgGradient}>
+    <Box py="20" id="projects">
       <Container maxW="container.xl">
         {/* Section Header */}
         <Box textAlign="center" mb="12" data-aos="fade-up">

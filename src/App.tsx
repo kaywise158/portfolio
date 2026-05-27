@@ -10,8 +10,6 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 
-export const bgGradient = "linear-gradient(135deg, #0a0a0a, #2d2d2d)";
-
 function App() {
   useEffect(() => {
     AOS.init({
