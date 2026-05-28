@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Box } from "@chakra-ui/react";
-import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   useEffect(() => {
