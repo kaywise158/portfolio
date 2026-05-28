@@ -18,8 +18,6 @@ import {
 } from "@chakra-ui/react";
 
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FiSearch } from "react-icons/fi";
-import { IoClose } from "react-icons/io5";
 
 import scrollTo from "../utils/scrollTo";
 
