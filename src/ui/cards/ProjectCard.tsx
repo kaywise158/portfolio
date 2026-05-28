@@ -10,10 +10,9 @@ import {
   Stack,
   Text,
   Badge,
-  IconButton,
   Flex,
 } from "@chakra-ui/react";
-import { FaExternalLinkAlt, FaGithub, FaSearchPlus } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import type { Project } from "../../types/project";
 
 interface ProjectCardProps {
