@@ -7,7 +7,7 @@ export const projects: Project[] = [
     year: 2025,
     description:
       "A full-stack multi-vendor marketplace with product management, secure payments via Stripe and Paystack, and role-based authentication. Built for scalability and a seamless shopping experience.",
-    images: ["/ecommerce/mv11.png"],
+    images: ["/project-image.webp"],
     technologies: [
       "React",
       "TypeScript",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     year: 2025,
     description:
       "A progressive web app for large-scale computer-based testing with real-time monitoring, live analytics, and automated reporting. Engineered to handle concurrent test sessions with reliable performance.",
-    images: ["testwise/testwise001.png"],
+    images: ["/project-image.webp"],
     technologies: [
       "TypeScript",
       "React",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     year: 2026,
     description:
       "An adventure tour booking platform where users can discover, plan, and book curated travel experiences. Features tour listings, itinerary management, and a clean booking flow built for travelers and tour operators alike.",
-    images: ["/roamify/roamify.png"],
+    images: ["/project-image.webp"],
     technologies: [
       "Next.js",
       "TypeScript",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     year: 2026,
     description:
       "A full-stack marketplace platform connecting buyers, sellers, and runners for seamless on-demand delivery. Buyers browse and order from local vendors, while runners handle last-mile delivery straight to the doorstep — think Glovo or Jumia, built from scratch.",
-    images: ["/marketgo/marketgo_01.png"],
+    images: ["/project-image.webp"],
     technologies: [
       "Spring Boot",
       "Vue.js",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     year: 2025,
     description:
       "A modern enterprise management application with real-time communication, calendar scheduling, and an analytics dashboard. Built with Next.js and Firebase for fast, scalable performance.",
-    images: ["enterprise/ent001.png"],
+    images: ["/project-image.webp"],
     technologies: [
       "Next.js",
       "Firebase",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     year: 2025,
     description:
       "An upcoming full-stack HR management system for handling employee records, payroll, leave requests, and performance tracking. Currently under active development with a Vue.js frontend and a Java Spring Boot backend — watch this space.",
-    images: ["/nexus-hr/nexus-hr001.png"],
+    images: ["/project-image.webp"],
     technologies: ["Vue.js", "Java", "Spring Boot", "TypeScript"],
     githubUrl: "",
     liveUrl: "",
