@@ -37,7 +37,6 @@ import {
 } from "react-icons/fa";
 import { type IconType } from "react-icons";
 
-// Contact information and social links data
 interface ContactInfo {
   icon: IconType;
   label: string;
@@ -94,48 +93,19 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ info }) => {
   const content = (
     <HStack
       spacing="4"
-      p="6"
-      bg="rgba(255, 255, 255, 0.05)"
-      borderWidth="1px"
-      borderColor="whiteAlpha.150"
-      borderRadius="xl"
+      py="3"
+      align="center"
       transition="all 0.3s"
-      backdropFilter="blur(10px)"
-      _hover={{
-        transform: "translateY(-4px)",
-        boxShadow: "xl",
-        borderColor: "whiteAlpha.400",
-        bg: "rgba(255, 255, 255, 0.08)",
-      }}
-      align="flex-start"
+      _hover={{ transform: "translateX(4px)" }}
     >
-      <Box
-        w="12"
-        h="12"
-        minW="12"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        borderRadius="lg"
-        bg="whiteAlpha.100"
-        color="whiteAlpha.700"
+      <Icon as={info.icon} boxSize="5" color="whiteAlpha.700" flexShrink={0} />
+      <Text
+        color="whiteAlpha.800"
+        fontSize={{ base: "sm", md: "md" }}
+        wordBreak="break-all"
       >
-        <Icon as={info.icon} boxSize="6" />
-      </Box>
-      <VStack align="start" spacing="1" minW="0" flex="1">
-        <Text fontSize="sm" color="whiteAlpha.600" fontWeight="medium">
-          {info.label}
-        </Text>
-        <Text
-          fontWeight="semibold"
-          color="white"
-          wordBreak="break-all"
-          overflowWrap="anywhere"
-          fontSize={{ base: "sm", md: "md" }}
-        >
-          {info.value}
-        </Text>
-      </VStack>
+        {info.value}
+      </Text>
     </HStack>
   );
 
@@ -146,6 +116,27 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ info }) => {
   ) : (
     content
   );
+};
+
+// Shared input styles matching the image: pill/rounded, dark bg, subtle border
+const inputStyles = {
+  size: "lg" as const,
+  bg: "rgba(255, 255, 255, 0.07)",
+  borderColor: "rgba(255, 255, 255, 0.15)",
+  borderWidth: "1px",
+  borderRadius: "full",
+  color: "white",
+  px: "6",
+  _placeholder: { color: "whiteAlpha.400", fontSize: "sm" },
+  _hover: {
+    borderColor: "rgba(255, 255, 255, 0.3)",
+    bg: "rgba(255,255,255,0.09)",
+  },
+  _focus: {
+    borderColor: "rgba(130, 100, 255, 0.6)",
+    boxShadow: "0 0 0 1px rgba(130,100,255,0.4)",
+    bg: "rgba(255,255,255,0.09)",
+  },
 };
 
 export const ContactSection: React.FC = () => {
@@ -167,10 +158,7 @@ export const ContactSection: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -192,14 +180,7 @@ export const ContactSection: React.FC = () => {
       );
 
       setSubmitterName(formData.name);
-
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
+      setFormData({ name: "", email: "", subject: "", message: "" });
       onOpen();
     } catch {
       toast({
@@ -217,8 +198,37 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <Box py="20" id="contact">
-      <Container maxW="container.xl">
+    <Box
+      py="20"
+      id="contact"
+      bg="linear-gradient(135deg, #0a0f2c 0%, #0d1340 40%, #12103a 100%)"
+      minH="100vh"
+      position="relative"
+      overflow="hidden"
+    >
+      {/* Subtle background glow blobs matching the dark navy aesthetic */}
+      <Box
+        position="absolute"
+        top="-10%"
+        right="-5%"
+        w="500px"
+        h="500px"
+        borderRadius="full"
+        bg="radial-gradient(circle, rgba(80, 40, 180, 0.15) 0%, transparent 70%)"
+        pointerEvents="none"
+      />
+      <Box
+        position="absolute"
+        bottom="-10%"
+        left="-5%"
+        w="400px"
+        h="400px"
+        borderRadius="full"
+        bg="radial-gradient(circle, rgba(220, 50, 100, 0.08) 0%, transparent 70%)"
+        pointerEvents="none"
+      />
+
+      <Container maxW="container.xl" position="relative" zIndex={1}>
         {/* Section Header */}
         <Stack spacing="4" textAlign="center" mb="16" data-aos="fade-up">
           <Heading as="h2" size="2xl" color="white">
@@ -230,25 +240,34 @@ export const ContactSection: React.FC = () => {
           </Text>
         </Stack>
 
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
-          {/* Left Side - Contact Info */}
-          <Stack spacing="8">
-            <Box data-aos="fade-right">
-              <Heading size="lg" color="white" mb="6">
-                Contact Information
+        <SimpleGrid
+          columns={{ base: 1, lg: 2 }}
+          spacing="16"
+          alignItems="center"
+        >
+          {/* Left Side — matches image: plain text info, no cards */}
+          <Stack spacing="8" data-aos="fade-right">
+            <Box>
+              <Heading size="xl" color="white" mb="2" fontWeight="bold">
+                Get in touch today
               </Heading>
-              <Stack spacing="4">
-                {contactInfo.map((info, index) => (
-                  <Box
-                    key={index}
-                    data-aos="fade-right"
-                    data-aos-delay={index * 100}
-                  >
-                    <ContactInfoCard info={info} />
-                  </Box>
-                ))}
-              </Stack>
+              <Text color="whiteAlpha.600" fontSize="md" maxW="sm">
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
+              </Text>
             </Box>
+
+            <Stack spacing="1">
+              {contactInfo.map((info, index) => (
+                <Box
+                  key={index}
+                  data-aos="fade-right"
+                  data-aos-delay={index * 100}
+                >
+                  <ContactInfoCard info={info} />
+                </Box>
+              ))}
+            </Stack>
 
             {/* Social Links */}
             <Box data-aos="fade-right" data-aos-delay="300">
@@ -282,113 +301,130 @@ export const ContactSection: React.FC = () => {
             </Box>
           </Stack>
 
-          {/* Right Side - Contact Form */}
+          {/* Right Side — Form card matching the image */}
           <Box
-            bg="rgba(255, 255, 255, 0.05)"
-            p="8"
-            borderRadius="xl"
-            boxShadow="lg"
-            backdropFilter="blur(10px)"
+            bg="rgba(255, 255, 255, 0.04)"
+            p={{ base: "6", md: "8" }}
+            borderRadius="2xl"
             border="1px solid"
-            borderColor="whiteAlpha.150"
+            borderColor="rgba(255, 255, 255, 0.1)"
+            backdropFilter="blur(20px)"
+            boxShadow="0 8px 60px rgba(0,0,0,0.4)"
             data-aos="fade-left"
             data-aos-delay="200"
           >
             <form onSubmit={handleSubmit}>
-              <Stack spacing="6">
-                <FormControl isRequired>
-                  <FormLabel color="white">Name</FormLabel>
-                  <Input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    size="lg"
-                    bg="rgba(255, 255, 255, 0.1)"
-                    borderColor="whiteAlpha.150"
-                    color="white"
-                    _placeholder={{ color: "gray.400" }}
-                    _hover={{ borderColor: "whiteAlpha.500" }}
-                    _focus={{
-                      borderColor: "whiteAlpha.600",
-                      boxShadow: "0 0 0 1px rgba(255,255,255,0.3)",
-                    }}
-                  />
-                </FormControl>
+              <Stack spacing="5">
+                {/* Row 1: Name + Email */}
+                <SimpleGrid columns={2} spacing="4">
+                  <FormControl isRequired>
+                    <FormLabel color="whiteAlpha.700" fontSize="sm" mb="2">
+                      Name
+                    </FormLabel>
+                    <Input
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Carter"
+                      {...inputStyles}
+                    />
+                  </FormControl>
+                  <FormControl isRequired>
+                    <FormLabel color="whiteAlpha.700" fontSize="sm" mb="2">
+                      Email
+                    </FormLabel>
+                    <Input
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="example@email.com"
+                      {...inputStyles}
+                    />
+                  </FormControl>
+                </SimpleGrid>
 
-                <FormControl isRequired>
-                  <FormLabel color="white">Email</FormLabel>
-                  <Input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your.email@example.com"
-                    size="lg"
-                    bg="rgba(255, 255, 255, 0.1)"
-                    borderColor="whiteAlpha.150"
-                    color="white"
-                    _placeholder={{ color: "gray.400" }}
-                    _hover={{ borderColor: "whiteAlpha.500" }}
-                    _focus={{
-                      borderColor: "whiteAlpha.600",
-                      boxShadow: "0 0 0 1px rgba(255,255,255,0.3)",
-                    }}
-                  />
-                </FormControl>
+                {/* Row 2: Phone + Subject (mapped to "Company" slot in image) */}
+                <SimpleGrid columns={2} spacing="4">
+                  <FormControl>
+                    <FormLabel color="whiteAlpha.700" fontSize="sm" mb="2">
+                      Phone
+                    </FormLabel>
+                    <Input
+                      name="phone"
+                      placeholder="(123) 456 - 789"
+                      {...inputStyles}
+                    />
+                  </FormControl>
+                  <FormControl isRequired>
+                    <FormLabel color="whiteAlpha.700" fontSize="sm" mb="2">
+                      Subject
+                    </FormLabel>
+                    <Input
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="Project inquiry"
+                      {...inputStyles}
+                    />
+                  </FormControl>
+                </SimpleGrid>
 
+                {/* Message */}
                 <FormControl isRequired>
-                  <FormLabel color="white">Subject</FormLabel>
-                  <Input
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Project inquiry"
-                    size="lg"
-                    bg="rgba(255, 255, 255, 0.1)"
-                    borderColor="whiteAlpha.150"
-                    color="white"
-                    _placeholder={{ color: "gray.400" }}
-                    _hover={{ borderColor: "whiteAlpha.500" }}
-                    _focus={{
-                      borderColor: "whiteAlpha.600",
-                      boxShadow: "0 0 0 1px rgba(255,255,255,0.3)",
-                    }}
-                  />
-                </FormControl>
-
-                <FormControl isRequired>
-                  <FormLabel color="white">Message</FormLabel>
+                  <FormLabel color="whiteAlpha.700" fontSize="sm" mb="2">
+                    Message
+                  </FormLabel>
                   <Textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project..."
-                    rows={6}
+                    placeholder="Please type your message here..."
+                    rows={5}
                     size="lg"
-                    bg="rgba(255, 255, 255, 0.1)"
-                    borderColor="whiteAlpha.150"
+                    bg="rgba(255, 255, 255, 0.07)"
+                    borderColor="rgba(255, 255, 255, 0.15)"
+                    borderWidth="1px"
+                    borderRadius="2xl"
                     color="white"
-                    _placeholder={{ color: "gray.400" }}
-                    _hover={{ borderColor: "whiteAlpha.500" }}
+                    px="6"
+                    py="4"
+                    resize="none"
+                    _placeholder={{ color: "whiteAlpha.400", fontSize: "sm" }}
+                    _hover={{ borderColor: "rgba(255,255,255,0.3)" }}
                     _focus={{
-                      borderColor: "whiteAlpha.600",
-                      boxShadow: "0 0 0 1px rgba(255,255,255,0.3)",
+                      borderColor: "rgba(130,100,255,0.6)",
+                      boxShadow: "0 0 0 1px rgba(130,100,255,0.4)",
                     }}
                   />
                 </FormControl>
 
+                {/* Gradient Send button matching the image */}
                 <Button
                   type="submit"
-                  colorScheme="whiteAlpha"
                   size="lg"
                   w="full"
+                  h="14"
+                  borderRadius="full"
                   isLoading={isSubmitting}
                   loadingText="Sending..."
-                  _hover={{ transform: "translateY(-2px)" }}
+                  background="linear-gradient(90deg, #4f8ef7 0%, #c0397a 100%)"
+                  color="white"
+                  fontWeight="semibold"
+                  fontSize="md"
+                  border="none"
+                  _hover={{
+                    background:
+                      "linear-gradient(90deg, #3a7ae0 0%, #a82e6a 100%)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 8px 30px rgba(100, 80, 220, 0.4)",
+                  }}
+                  _active={{
+                    transform: "translateY(0)",
+                  }}
                   transition="all 0.2s"
                 >
-                  Send Message
+                  Send message
                 </Button>
               </Stack>
             </form>
@@ -453,11 +489,16 @@ export const ContactSection: React.FC = () => {
           </ModalBody>
           <ModalFooter>
             <Button
-              colorScheme="whiteAlpha"
               size="lg"
               w="full"
+              borderRadius="full"
               onClick={onClose}
-              _hover={{ transform: "translateY(-2px)" }}
+              background="linear-gradient(90deg, #4f8ef7 0%, #c0397a 100%)"
+              color="white"
+              _hover={{
+                background: "linear-gradient(90deg, #3a7ae0 0%, #a82e6a 100%)",
+                transform: "translateY(-2px)",
+              }}
             >
               Close
             </Button>

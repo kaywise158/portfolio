@@ -6,7 +6,6 @@ import {
   Link as ChakraLink,
   HStack,
   Icon,
-  Divider,
   SimpleGrid,
   VStack,
   Heading,
@@ -57,12 +56,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Box
-      backdropFilter="blur(10px)"
-      bg="rgba(0, 0, 0, 0.95)"
-      borderTop="1px"
-      borderColor="whiteAlpha.150"
-    >
+    <Box bg="#0d1b2e" borderTop="none" position="relative">
       <Container maxW="container.xl" py="12">
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing="8" mb="8">
           {/* Brand Section */}
@@ -70,13 +64,13 @@ export const Footer: React.FC = () => {
             <Text
               fontSize="2xl"
               fontWeight="bold"
-              bgGradient="linear(to-r, gray.300, white)"
+              bgGradient="linear(to-r, #e75480, #4a90d9)"
               bgClip="text"
               fontFamily='"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
             >
               azmuritador
             </Text>
-            <Text color="gray.300" fontSize="sm">
+            <Text color="gray.400" fontSize="sm">
               Full Stack Developer building reliable, scalable applications and
               clean user experiences across the entire stack.
             </Text>
@@ -95,12 +89,11 @@ export const Footer: React.FC = () => {
                     alignItems="center"
                     justifyContent="center"
                     borderRadius="md"
-                    bg="rgba(255, 255, 255, 0.1)"
-                    color="whiteAlpha.700"
+                    bg="#1a8fe3"
+                    color="white"
                     transition="all 0.3s"
                     _hover={{
-                      bg: "whiteAlpha.200",
-                      color: "white",
+                      bg: "#1577c4",
                       transform: "translateY(-2px)",
                     }}
                   >
@@ -122,7 +115,7 @@ export const Footer: React.FC = () => {
                   key={index}
                   onClick={() => scrollTo(link.id)}
                   cursor="pointer"
-                  color="gray.300"
+                  color="gray.400"
                   fontSize="sm"
                   _hover={{
                     color: "white",
@@ -142,7 +135,7 @@ export const Footer: React.FC = () => {
             <Heading size="sm" color="white">
               Get In Touch
             </Heading>
-            <Stack spacing="2" fontSize="sm" color="gray.300">
+            <Stack spacing="2" fontSize="sm" color="gray.400">
               <Text>Lagos, Nigeria</Text>
               <ChakraLink
                 href="mailto:abdulazeezmuritador9@gmail.com"
@@ -162,7 +155,8 @@ export const Footer: React.FC = () => {
           </VStack>
         </SimpleGrid>
 
-        <Divider borderColor="whiteAlpha.150" mb="8" />
+        {/* Gradient Divider matching the pink-to-blue gradient in image */}
+        <Box h="1px" mb="8" bgGradient="linear(to-r, #e75480, #4a90d9)" />
 
         {/* Bottom Section */}
         <Stack
@@ -171,12 +165,12 @@ export const Footer: React.FC = () => {
           align="center"
           spacing="4"
         >
-          <Text fontSize="sm" color="gray.300">
-            © {currentYear} azmuritador. All rights reserved.
+          <Text fontSize="sm" color="gray.400">
+            © {currentYear} Abdulazeez Muritador. All rights reserved.
           </Text>
-          <HStack spacing="1" fontSize="sm" color="gray.300">
+          <HStack spacing="1" fontSize="sm" color="gray.400">
             <Text>Built with</Text>
-            <Icon as={FaHeart} color="gray.400" boxSize="4" />
+            <Icon as={FaHeart} color="gray.500" boxSize="4" />
             <Text>using React, TypeScript & Chakra UI</Text>
           </HStack>
         </Stack>

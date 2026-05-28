@@ -10,7 +10,7 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "../ui/cards/ProjectCard";
 import {
   projects,
   getFeaturedProjects,
@@ -26,11 +26,14 @@ export const ProjectsSection: React.FC = () => {
         {/* Section Header */}
         <Box textAlign="center" mb="12" data-aos="fade-up">
           <Heading as="h2" size="2xl" mb="4" color="white">
-            My Projects
+            Recent Projects
           </Heading>
           <Text fontSize="lg" color="gray.300" maxW="2xl" mx="auto">
-            A selection of projects that demonstrate my ability to build
-            real-world applications across the full stack.
+            Here are some of the projects I've worked on recently. Click on any
+            project to see more details, including the tech stack used and links
+            to the code repositories. You can also filter the projects by
+            category using the tabs below. Feel free to explore and check out
+            the code on GitHub!
           </Text>
         </Box>
 
@@ -84,7 +87,7 @@ export const ProjectsSection: React.FC = () => {
           <TabPanels>
             {/* All Projects */}
             <TabPanel>
-              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="8">
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing="8">
                 {projects.map((project, index) => (
                   <Box
                     key={project.id}

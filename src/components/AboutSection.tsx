@@ -9,6 +9,10 @@ import {
   Image,
 } from "@chakra-ui/react";
 
+import { skillCategories, skills } from "../utils/Skills";
+import SkillCard from "../ui/cards/SkillCard";
+import SkillIconCard from "../ui/cards/SkillIconCard";
+
 export const AboutSection: React.FC = () => {
   return (
     <Box
@@ -18,6 +22,7 @@ export const AboutSection: React.FC = () => {
       overflow="hidden"
     >
       <Container maxW="container.xl">
+        {/* TOP SECTION */}
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 10, lg: 16 }}
@@ -30,7 +35,6 @@ export const AboutSection: React.FC = () => {
             w="full"
             maxW={{ base: "100%", lg: "520px" }}
           >
-            {/* outer glow */}
             <Box
               position="absolute"
               inset="-12px"
@@ -40,7 +44,6 @@ export const AboutSection: React.FC = () => {
               zIndex={0}
             />
 
-            {/* image card */}
             <Box
               position="relative"
               overflow="hidden"
@@ -50,7 +53,6 @@ export const AboutSection: React.FC = () => {
               borderColor="whiteAlpha.100"
               boxShadow="0 20px 80px rgba(0,0,0,0.45)"
             >
-              {/* blue light */}
               <Box
                 position="absolute"
                 top="0"
@@ -62,7 +64,6 @@ export const AboutSection: React.FC = () => {
                 zIndex={1}
               />
 
-              {/* pink light */}
               <Box
                 position="absolute"
                 top="0"
@@ -88,19 +89,17 @@ export const AboutSection: React.FC = () => {
                 }}
               />
 
-              {/* dark overlay */}
               <Box
                 position="absolute"
                 inset="0"
                 bg="rgba(0,0,0,0.28)"
                 zIndex={3}
-                pointerEvents="none"
               />
             </Box>
           </Box>
 
           {/* CONTENT SIDE */}
-          <Stack spacing="8" data-aos="fade-left" justify="center" maxW="620px">
+          <Stack spacing="8" data-aos="fade-left" maxW="620px">
             <Heading
               color="white"
               fontWeight="700"
@@ -116,7 +115,6 @@ export const AboutSection: React.FC = () => {
                 color="gray.300"
                 fontSize={{ base: "md", md: "xl" }}
                 lineHeight="1.9"
-                fontWeight="400"
               >
                 I am a MERN Stack Web Developer focusing on building
                 production-ready applications. I enjoy designing APIs, creating
@@ -131,13 +129,10 @@ export const AboutSection: React.FC = () => {
               >
                 Along with strong problem-solving skills, I follow clean
                 architecture principles and modern development patterns. I build
-                maintainable applications that feel fast, secure, and intuitive
-                while continuously improving my workflow and technical
-                expertise.
+                maintainable applications that feel fast, secure, and intuitive.
               </Text>
             </Stack>
 
-            {/* BUTTON */}
             <Flex pt="2">
               <Box
                 as="a"
@@ -149,8 +144,6 @@ export const AboutSection: React.FC = () => {
                 color="white"
                 fontWeight="700"
                 fontSize="lg"
-                position="relative"
-                overflow="hidden"
                 transition="0.35s ease"
                 bgGradient="linear(to-r, #2F80ED, #EB5757)"
                 boxShadow="0 10px 35px rgba(80,120,255,0.35)"
@@ -164,6 +157,67 @@ export const AboutSection: React.FC = () => {
             </Flex>
           </Stack>
         </SimpleGrid>
+
+        {/* TECH STACK */}
+        <Box mt={{ base: "24", md: "32" }}>
+          <Stack spacing="3" textAlign="center" mb="12">
+            <Heading color="white" fontSize={{ base: "3xl", md: "5xl" }}>
+              Skills & Technologies
+            </Heading>
+            <Text
+              color="whiteAlpha.600"
+              letterSpacing="widest"
+              fontSize="sm"
+              fontWeight="700"
+            >
+              I work with modern tools and technologies to build performant and
+              scalable applications. My tech stack includes a wide range of
+              libraries and frameworks that I use to create efficient and
+              maintainable code.
+            </Text>
+          </Stack>
+
+          <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing="5">
+            {skills.map((skill, index) => (
+              <Box
+                key={index}
+                data-aos="zoom-in"
+                data-aos-delay={Math.min(index * 50, 400)}
+              >
+                <SkillIconCard skill={skill} />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
+
+        {/* SERVICES */}
+        <Box mt={{ base: "24", md: "32" }}>
+          <Stack spacing="3" textAlign="center" mb="12">
+            <Heading color="white" fontSize={{ base: "3xl", md: "5xl" }}>
+              Services I Provide
+            </Heading>
+            <Text
+              color="whiteAlpha.600"
+              letterSpacing="widest"
+              fontSize="sm"
+              fontWeight="700"
+            >
+              I offer a range of services to help you bring your web application
+              ideas to life. Whether you need a full-stack solution, API
+              development, or performance optimization, I have the skills and
+              experience to deliver high-quality results that meet your needs
+              and exceed your expectations.
+            </Text>
+          </Stack>
+
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="6">
+            {skillCategories.map((category, index) => (
+              <Box key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+                <SkillCard category={category} />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
       </Container>
     </Box>
   );

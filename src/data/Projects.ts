@@ -4,6 +4,7 @@ export const projects: Project[] = [
   {
     id: 1,
     name: "Multivendor E-commerce Platform",
+    year: 2025,
     description:
       "A full-stack multi-vendor marketplace with product management, secure payments via Stripe and Paystack, and role-based authentication. Built for scalability and a seamless shopping experience.",
     images: ["/ecommerce/mv11.png"],
@@ -27,6 +28,7 @@ export const projects: Project[] = [
   {
     id: 2,
     name: "Testwise CBT Platform",
+    year: 2025,
     description:
       "A progressive web app for large-scale computer-based testing with real-time monitoring, live analytics, and automated reporting. Engineered to handle concurrent test sessions with reliable performance.",
     images: ["testwise/testwise001.png"],
@@ -47,6 +49,7 @@ export const projects: Project[] = [
   {
     id: 3,
     name: "Roamify",
+    year: 2026,
     description:
       "An adventure tour booking platform where users can discover, plan, and book curated travel experiences. Features tour listings, itinerary management, and a clean booking flow built for travelers and tour operators alike.",
     images: ["/roamify/roamify.png"],
@@ -65,25 +68,27 @@ export const projects: Project[] = [
 
   {
     id: 4,
-    name: "Weather Dashboard",
+    name: "MarketGO",
+    year: 2026,
     description:
-      "A installable PWA delivering real-time weather forecasts with geolocation, interactive maps, and a responsive UI optimized for both mobile and desktop.",
-    images: ["/weather/weather_01.png"],
+      "A full-stack marketplace platform connecting buyers, sellers, and runners for seamless on-demand delivery. Buyers browse and order from local vendors, while runners handle last-mile delivery straight to the doorstep — think Glovo or Jumia, built from scratch.",
+    images: ["/marketgo/marketgo_01.png"],
     technologies: [
-      "React",
-      "TypeScript",
-      "OpenWeather API",
-      "Chakra UI",
-      "Mapbox",
+      "Spring Boot",
+      "Vue.js",
+      "REST API",
+      "PostgreSQL",
+      "WebSocket",
     ],
-    githubUrl: "https://github.com/abdulazeez9/meteometric-dashboard",
-    liveUrl: "https://meteometric.netlify.app",
-    featured: false,
+    githubUrl: "",
+    liveUrl: "",
+    featured: true,
     category: "web",
   },
   {
     id: 5,
     name: "Enterprise Suite",
+    year: 2025,
     description:
       "A modern enterprise management application with real-time communication, calendar scheduling, and an analytics dashboard. Built with Next.js and Firebase for fast, scalable performance.",
     images: ["enterprise/ent001.png"],
@@ -102,13 +107,14 @@ export const projects: Project[] = [
   {
     id: 6,
     name: "Nexus HR",
+    year: 2025,
     description:
       "An upcoming full-stack HR management system for handling employee records, payroll, leave requests, and performance tracking. Currently under active development with a Vue.js frontend and a Java Spring Boot backend — watch this space.",
     images: ["/nexus-hr/nexus-hr001.png"],
     technologies: ["Vue.js", "Java", "Spring Boot", "TypeScript"],
     githubUrl: "",
     liveUrl: "",
-    featured: false,
+    featured: true,
     category: "fullstack",
   },
 ];

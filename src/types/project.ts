@@ -6,6 +6,7 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  year?: number;
   featured?: boolean;
-  category?: 'web' | 'mobile' | 'fullstack' | 'other';
+  category?: "web" | "mobile" | "fullstack" | "other";
 }
