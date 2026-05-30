@@ -23,7 +23,6 @@ import {
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { BsArrowUpRight } from "react-icons/bs";
 
-import { yearsOfExperience } from "../utils/experience";
 import scrollTo from "../utils/scrollTo";
 
 export const HeroSection: React.FC = () => {
@@ -95,10 +94,9 @@ export const HeroSection: React.FC = () => {
               lineHeight="1.8"
               maxW="520px"
             >
-              {yearsOfExperience}+ years building scalable full-stack
-              applications using React, Node.js, Express, MongoDB, Java, and
-              Spring Boot. I focus on clean architecture, high performance, and
-              seamless user experiences.
+              I build scalable full-stack applications using React, Node.js,
+              Express, MongoDB, Java, and Spring Boot. I love clean code and
+              fast UIs
             </Text>
 
             {/* BUTTONS */}

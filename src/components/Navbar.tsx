@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
               bgGradient="linear(to-r, #3B82F6, #A855F7, #EF4444)"
               bgClip="text"
             >
-              MERN Stack Developer
+              FullStack Developer
             </Text>
           </ChakraLink>
 

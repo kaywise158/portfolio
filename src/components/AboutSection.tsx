@@ -9,10 +9,6 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-import { skillCategories, skills } from "../utils/Skills";
-import SkillCard from "../ui/cards/SkillCard";
-import SkillIconCard from "../ui/cards/SkillIconCard";
-
 export const AboutSection: React.FC = () => {
   return (
     <Box
@@ -157,67 +153,6 @@ export const AboutSection: React.FC = () => {
             </Flex>
           </Stack>
         </SimpleGrid>
-
-        {/* TECH STACK */}
-        <Box mt={{ base: "24", md: "32" }}>
-          <Stack spacing="3" textAlign="center" mb="12">
-            <Heading color="white" fontSize={{ base: "3xl", md: "5xl" }}>
-              Skills & Technologies
-            </Heading>
-            <Text
-              color="whiteAlpha.600"
-              letterSpacing="widest"
-              fontSize="sm"
-              fontWeight="700"
-            >
-              I work with modern tools and technologies to build performant and
-              scalable applications. My tech stack includes a wide range of
-              libraries and frameworks that I use to create efficient and
-              maintainable code.
-            </Text>
-          </Stack>
-
-          <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing="5">
-            {skills.map((skill, index) => (
-              <Box
-                key={index}
-                data-aos="zoom-in"
-                data-aos-delay={Math.min(index * 50, 400)}
-              >
-                <SkillIconCard skill={skill} />
-              </Box>
-            ))}
-          </SimpleGrid>
-        </Box>
-
-        {/* SERVICES */}
-        <Box mt={{ base: "24", md: "32" }}>
-          <Stack spacing="3" textAlign="center" mb="12">
-            <Heading color="white" fontSize={{ base: "3xl", md: "5xl" }}>
-              Services I Provide
-            </Heading>
-            <Text
-              color="whiteAlpha.600"
-              letterSpacing="widest"
-              fontSize="sm"
-              fontWeight="700"
-            >
-              I offer a range of services to help you bring your web application
-              ideas to life. Whether you need a full-stack solution, API
-              development, or performance optimization, I have the skills and
-              experience to deliver high-quality results that meet your needs
-              and exceed your expectations.
-            </Text>
-          </Stack>
-
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="6">
-            {skillCategories.map((category, index) => (
-              <Box key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                <SkillCard category={category} />
-              </Box>
-            ))}
-          </SimpleGrid>
-        </Box>
       </Container>
     </Box>
   );

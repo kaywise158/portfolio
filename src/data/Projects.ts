@@ -111,7 +111,7 @@ export const projects: Project[] = [
     description:
       "An upcoming full-stack HR management system for handling employee records, payroll, leave requests, and performance tracking. Currently under active development with a Vue.js frontend and a Java Spring Boot backend — watch this space.",
     images: ["/project-image.webp"],
-    technologies: ["Vue.js", "Java", "Spring Boot", "TypeScript"],
+    technologies: ["Vue.js", "Java", "Spring Boot", "PostgreSQL"],
     githubUrl: "",
     liveUrl: "",
     featured: true,

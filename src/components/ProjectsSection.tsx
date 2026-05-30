@@ -29,11 +29,8 @@ export const ProjectsSection: React.FC = () => {
             Recent Projects
           </Heading>
           <Text fontSize="lg" color="gray.300" maxW="2xl" mx="auto">
-            Here are some of the projects I've worked on recently. Click on any
-            project to see more details, including the tech stack used and links
-            to the code repositories. You can also filter the projects by
-            category using the tabs below. Feel free to explore and check out
-            the code on GitHub!
+            Here are some of the real-wolrd projects I've built across the
+            stack.
           </Text>
         </Box>
 

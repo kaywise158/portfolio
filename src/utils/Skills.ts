@@ -10,24 +10,14 @@ import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
-  SiHtml5,
-  SiCss3,
   SiNodedotjs,
   SiExpress,
-  // SiPython,
-  // SiDjango,
   SiSpring,
   SiMongodb,
   SiPostgresql,
   SiDocker,
   SiGit,
-  SiGithub,
-  SiChakraui,
-  SiRedux,
-  SiReactquery,
-  SiJest,
   SiAmazon,
-  SiVercel,
   SiRedis,
   SiGraphql,
 } from "react-icons/si";
@@ -83,46 +73,6 @@ const skills: Skill[] = [
     description:
       "Developing high-performance full-stack applications with server-side rendering.",
   },
-  {
-    name: "HTML5",
-    category: "frontend",
-    icon: SiHtml5,
-    color: "#E34F26",
-    description:
-      "Creating clean and semantic webpage structures for modern websites.",
-  },
-  {
-    name: "CSS3",
-    category: "frontend",
-    icon: SiCss3,
-    color: "#1572B6",
-    description:
-      "Designing responsive, modern, and visually appealing user interfaces.",
-  },
-  {
-    name: "Chakra UI",
-    category: "frontend",
-    icon: SiChakraui,
-    color: "#319795",
-    description:
-      "Building accessible and reusable UI components with clean styling systems.",
-  },
-  {
-    name: "Redux",
-    category: "frontend",
-    icon: SiRedux,
-    color: "#764ABC",
-    description:
-      "Managing complex application state efficiently across large React applications.",
-  },
-  {
-    name: "React Query",
-    category: "frontend",
-    icon: SiReactquery,
-    color: "#FF4154",
-    description:
-      "Handling server-state management, caching, and API synchronization efficiently.",
-  },
 
   // Backend
   {
@@ -168,20 +118,20 @@ const skills: Skill[] = [
 
   // Database
   {
-    name: "MongoDB",
-    category: "database",
-    icon: SiMongodb,
-    color: "#47A248",
-    description:
-      "Managing flexible NoSQL databases with optimized performance and scalability.",
-  },
-  {
     name: "PostgreSQL",
     category: "database",
     icon: SiPostgresql,
     color: "#4169E1",
     description:
       "Designing reliable relational databases with secure and efficient data handling.",
+  },
+  {
+    name: "MongoDB",
+    category: "database",
+    icon: SiMongodb,
+    color: "#47A248",
+    description:
+      "Managing flexible NoSQL databases with optimized performance and scalability.",
   },
   {
     name: "Redis",
@@ -210,36 +160,12 @@ const skills: Skill[] = [
       "Tracking code changes and managing collaborative development efficiently.",
   },
   {
-    name: "GitHub",
-    category: "devops",
-    icon: SiGithub,
-    color: "#FFFFFF",
-    description:
-      "Managing repositories, version control, and team collaboration workflows.",
-  },
-  {
     name: "AWS",
     category: "devops",
     icon: SiAmazon,
     color: "#FF9900",
     description:
       "Deploying and scaling cloud-based applications with reliable infrastructure.",
-  },
-  {
-    name: "Vercel",
-    category: "devops",
-    icon: SiVercel,
-    color: "#FFFFFF",
-    description:
-      "Deploying frontend applications with optimized speed and seamless CI/CD integration.",
-  },
-  {
-    name: "Jest",
-    category: "devops",
-    icon: SiJest,
-    color: "#C21325",
-    description:
-      "Testing applications to ensure reliability, stability, and clean code quality.",
   },
 ];
 

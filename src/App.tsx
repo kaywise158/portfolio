@@ -9,6 +9,8 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Navbar } from "./components/Navbar";
+import { Services } from "./components/Services";
+import { SkillsAndTech } from "./components/SkillsAndTech";
 
 function App() {
   useEffect(() => {
@@ -25,6 +27,8 @@ function App() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <SkillsAndTech />
+      <Services />
       <ProjectsSection />
       <ContactSection />
       <Footer />
