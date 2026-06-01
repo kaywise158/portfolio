@@ -10,13 +10,7 @@ import {
   VStack,
   Heading,
 } from "@chakra-ui/react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope,
-  FaHeart,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 interface FooterLink {
   name: string;
@@ -24,7 +18,9 @@ interface FooterLink {
 }
 
 const quickLinks: FooterLink[] = [
+  { name: "Home", id: "home" },
   { name: "About", id: "about" },
+  { name: "Services", id: "services" },
   { name: "Projects", id: "projects" },
   { name: "Contact", id: "contact" },
 ];
@@ -68,7 +64,7 @@ export const Footer: React.FC = () => {
               bgClip="text"
               fontFamily='"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
             >
-              azmuritador
+              FullStack Developer
             </Text>
             <Text color="gray.400" fontSize="sm">
               Full Stack Developer building reliable, scalable applications and
@@ -159,20 +155,11 @@ export const Footer: React.FC = () => {
         <Box h="1px" mb="8" bgGradient="linear(to-r, #e75480, #4a90d9)" />
 
         {/* Bottom Section */}
-        <Stack
-          direction={{ base: "column", md: "row" }}
-          justify="space-between"
-          align="center"
-          spacing="4"
-        >
+        <Stack textAlign="center">
           <Text fontSize="sm" color="gray.400">
-            © {currentYear} Abdulazeez Muritador. All rights reserved.
+            Copyright © {currentYear} Abdulazeez Muritador | All rights
+            reserved.
           </Text>
-          <HStack spacing="1" fontSize="sm" color="gray.400">
-            <Text>Built with</Text>
-            <Icon as={FaHeart} color="gray.500" boxSize="4" />
-            <Text>using React, TypeScript & Chakra UI</Text>
-          </HStack>
         </Stack>
       </Container>
     </Box>

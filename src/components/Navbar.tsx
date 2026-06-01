@@ -16,9 +16,8 @@ import {
   VStack,
   Button,
 } from "@chakra-ui/react";
-
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-
 import scrollTo from "../utils/scrollTo";
 
 interface NavLink {
@@ -36,6 +35,29 @@ const navLinks: NavLink[] = [
 
 export const Navbar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [activeId, setActiveId] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY + 100; // 100px offset for the navbar height
+
+      for (let i = navLinks.length - 1; i >= 0; i--) {
+        const el = document.getElementById(navLinks[i].id);
+        if (el && el.offsetTop <= scrollY) {
+          setActiveId(navLinks[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const linkColor = (id: string) =>
+    activeId === id ? "#3B82F6" : "whiteAlpha.900";
+
+  const linkWeight = (id: string) => (activeId === id ? "700" : "500");
 
   return (
     <Box
@@ -67,20 +89,32 @@ export const Navbar: React.FC = () => {
 
           {/* DESKTOP NAV */}
           <HStack spacing="10" display={{ base: "none", md: "flex" }}>
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <ChakraLink
                 key={link.name}
                 onClick={() => scrollTo(link.id)}
                 cursor="pointer"
                 position="relative"
-                fontWeight={index === 0 ? "700" : "500"}
-                color={index === 0 ? "#3B82F6" : "whiteAlpha.900"}
+                fontWeight={linkWeight(link.id)}
+                color={linkColor(link.id)}
                 fontSize="lg"
-                _hover={{
-                  textDecoration: "none",
-                  color: "#3B82F6",
-                }}
+                _hover={{ textDecoration: "none", color: "#3B82F6" }}
                 transition="all 0.3s ease"
+                // subtle underline indicator for active link
+                _after={
+                  activeId === link.id
+                    ? {
+                        content: '""',
+                        position: "absolute",
+                        bottom: "-4px",
+                        left: "0",
+                        right: "0",
+                        h: "2px",
+                        borderRadius: "full",
+                        bg: "linear-gradient(90deg, #3B82F6, #EF4444)",
+                      }
+                    : {}
+                }
               >
                 {link.name}
               </ChakraLink>
@@ -89,13 +123,11 @@ export const Navbar: React.FC = () => {
 
           {/* RIGHT ACTIONS */}
           <HStack spacing="3">
-            {/* Hire Me Button */}
             <Button
               onClick={() => scrollTo("contact")}
               h="52px"
               px="8"
               borderRadius="full"
-              position="relative"
               bg="rgba(255,255,255,0.03)"
               border="1px solid transparent"
               backgroundImage={`
@@ -116,7 +148,6 @@ export const Navbar: React.FC = () => {
               ✨ Hire Me
             </Button>
 
-            {/* MOBILE MENU */}
             <IconButton
               size="md"
               icon={<GiHamburgerMenu />}
@@ -153,21 +184,26 @@ export const Navbar: React.FC = () => {
 
           <DrawerBody pt="8">
             <VStack spacing="5" align="stretch">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <ChakraLink
                   key={link.name}
                   onClick={() => {
-                    scrollTo(link.id);
                     onClose();
+                    setTimeout(() => scrollTo(link.id), 300);
                   }}
                   fontSize="lg"
-                  fontWeight={index === 0 ? "700" : "500"}
-                  color={index === 0 ? "#3B82F6" : "whiteAlpha.900"}
+                  fontWeight={linkWeight(link.id)}
+                  color={linkColor(link.id)}
                   py="2"
-                  _hover={{
-                    textDecoration: "none",
-                    color: "#3B82F6",
-                  }}
+                  // left border accent for active item in drawer
+                  borderLeft={
+                    activeId === link.id
+                      ? "3px solid #3B82F6"
+                      : "3px solid transparent"
+                  }
+                  pl={activeId === link.id ? "3" : "0"}
+                  transition="all 0.2s ease"
+                  _hover={{ textDecoration: "none", color: "#3B82F6" }}
                 >
                   {link.name}
                 </ChakraLink>
@@ -176,17 +212,15 @@ export const Navbar: React.FC = () => {
               <Button
                 mt="6"
                 onClick={() => {
-                  scrollTo("contact");
                   onClose();
+                  setTimeout(() => scrollTo("contact"), 300);
                 }}
                 h="55px"
                 borderRadius="full"
                 bgGradient="linear(to-r, #3B82F6, #EF4444)"
                 color="white"
                 fontWeight="700"
-                _hover={{
-                  opacity: 0.9,
-                }}
+                _hover={{ opacity: 0.9 }}
               >
                 ✨ Hire Me
               </Button>

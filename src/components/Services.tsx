@@ -28,7 +28,6 @@ export const Services: React.FC = () => {
             <Text
               color="whiteAlpha.700"
               letterSpacing="widest"
-              //   fontSize="sm"
               fontWeight="700"
               maxW={"2xl"}
               mx={"auto"}

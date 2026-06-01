@@ -112,7 +112,7 @@ export const AboutSection: React.FC = () => {
                 fontSize={{ base: "md", md: "xl" }}
                 lineHeight="1.9"
               >
-                I am a MERN Stack Web Developer focusing on building
+                I am a Full-Stack Developer focusing on building
                 production-ready applications. I enjoy designing APIs, creating
                 interactive user interfaces, and optimizing performance to
                 deliver smooth and efficient user experiences.

@@ -31,6 +31,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       borderColor="rgba(0, 183, 255, 0.4)"
       borderRadius="24px"
       p="4"
+      h="100%"
+      display="flex"
+      flexDirection="column"
       transition="all 0.3s ease"
       boxShadow="0 0 30px rgba(0, 183, 255, 0.08)"
       _hover={{
@@ -45,6 +48,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         overflow="hidden"
         borderRadius="20px"
         h={{ base: "220px", md: "250px" }}
+        flexShrink={0} // image never shrinks
         bg="linear-gradient(180deg, #142850 0%, #08152f 100%)"
       >
         <Image
@@ -54,16 +58,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           h="100%"
           objectFit="cover"
           transition="0.4s ease"
-          _hover={{
-            transform: "scale(1.06)",
-          }}
+          _hover={{ transform: "scale(1.06)" }}
           filter={isUnderDevelopment ? "grayscale(40%)" : "none"}
         />
       </Box>
 
-      {/* CONTENT */}
-      <CardBody px="1" pt="5" pb="2">
-        <Stack spacing="4">
+      {/* CONTENT — grows to fill remaining space */}
+      <CardBody
+        px="1"
+        pt="5"
+        pb="2"
+        flex="1"
+        display="flex"
+        flexDirection="column"
+      >
+        <Stack spacing="4" flex="1">
           {/* TITLE */}
           <Flex align="center" gap="2" wrap="wrap">
             <Heading
@@ -74,42 +83,53 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             >
               {project.name}
             </Heading>
-
-            <Text
-              color="gray.400"
-              fontWeight="600"
-              fontSize={{ base: "22px", md: "26px" }}
-            >
-              ({project.year})
-            </Text>
+            <Box display={{ base: "none", md: "block" }}>
+              <Text
+                color="gray.400"
+                fontWeight="600"
+                fontSize={{ base: "22px", md: "26px" }}
+              >
+                ({project.year})
+              </Text>
+            </Box>
           </Flex>
 
-          {/* DESCRIPTION */}
-          <Text color="gray.300" fontSize="lg" lineHeight="1.7" noOfLines={2}>
-            {project.description}
-          </Text>
+          {/* DESCRIPTION — fixed to 2 lines so buttons stay aligned */}
+          <Box display={{ base: "none", md: "block" }}>
+            <Text
+              color="gray.300"
+              fontSize="lg"
+              lineHeight="1.7"
+              noOfLines={2}
+              flex="1"
+            >
+              {project.description}
+            </Text>
+          </Box>
 
           {/* TECH STACK */}
-          <HStack spacing="3" flexWrap="wrap">
-            {project.technologies.map((tech, index) => (
-              <Badge
-                key={index}
-                px="4"
-                py="2"
-                borderRadius="full"
-                bg="rgba(0, 140, 255, 0.12)"
-                color="#38bdf8"
-                fontWeight="500"
-                fontSize="0.9rem"
-                border="1px solid rgba(0, 183, 255, 0.1)"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </HStack>
+          <Box display={{ base: "none", md: "flex" }}>
+            <HStack spacing="3" flexWrap="wrap">
+              {project.technologies.map((tech, index) => (
+                <Badge
+                  key={index}
+                  px="4"
+                  py="2"
+                  borderRadius="full"
+                  bg="rgba(0, 140, 255, 0.12)"
+                  color="#38bdf8"
+                  fontWeight="500"
+                  fontSize="0.9rem"
+                  border="1px solid rgba(0, 183, 255, 0.1)"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </HStack>
+          </Box>
 
-          {/* BUTTONS */}
-          <HStack spacing="5" pt="2" flexWrap="wrap">
+          {/* BUTTONS — always pinned to the bottom */}
+          <HStack spacing="5" pt="2" flexWrap="wrap" mt="auto">
             {project.githubUrl && (
               <Button
                 as={Link}
@@ -123,10 +143,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 fontWeight="700"
                 color="white"
                 bg="linear-gradient(90deg, #3b82f6 0%, #ef4444 100%)"
-                _hover={{
-                  transform: "translateY(-2px)",
-                  opacity: 0.95,
-                }}
+                _hover={{ transform: "translateY(-2px)", opacity: 0.95 }}
               >
                 GitHub
               </Button>
@@ -145,10 +162,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 fontWeight="700"
                 color="white"
                 bg="linear-gradient(90deg, #1d4ed8 0%, #2196f3 100%)"
-                _hover={{
-                  transform: "translateY(-2px)",
-                  opacity: 0.95,
-                }}
+                _hover={{ transform: "translateY(-2px)", opacity: 0.95 }}
               >
                 Live Demo
               </Button>

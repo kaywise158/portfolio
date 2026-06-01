@@ -32,7 +32,7 @@ export const SkillsAndTech: React.FC = () => {
             </Text>
           </Stack>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5">
+          <SimpleGrid columns={{ base: 2, md: 2, lg: 4 }} spacing="5">
             {skills.map((skill, index) => (
               <Box
                 key={index}

@@ -23,16 +23,18 @@ function App() {
   }, []);
 
   return (
-    <Box overflowX="hidden" minHeight="100vh">
+    <Box minHeight="100vh">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsAndTech />
-      <Services />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
-      <ScrollToTop />
+      <Box overflowX="hidden">
+        <HeroSection />
+        <AboutSection />
+        <SkillsAndTech />
+        <Services />
+        <ProjectsSection />
+        <ContactSection />
+        <Footer />
+        <ScrollToTop />
+      </Box>
     </Box>
   );
 }

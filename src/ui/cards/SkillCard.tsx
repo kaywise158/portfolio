@@ -9,7 +9,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
   return (
     <Box
       p={{ base: "8", md: "10" }}
-      minH="320px"
+      h="320px"
       bg="rgba(16,25,60,0.65)"
       border="1px solid"
       borderColor="rgba(255,255,255,0.12)"

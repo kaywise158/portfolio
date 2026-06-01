@@ -9,7 +9,7 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
   return (
     <Box
       p={{ base: "8", md: "10" }}
-      minH="320px"
+      h={{ base: "210px", md: "320px" }}
       bg="rgba(16,25,60,0.65)"
       border="1px solid"
       borderColor="rgba(255,255,255,0.12)"
@@ -49,13 +49,12 @@ const SkillIconCard: React.FC<SkillIconCardProps> = ({ skill }) => {
           {skill.name}
         </Heading>
 
-        <Text
-          color="gray.300"
-          fontSize={{ base: "md", md: "lg" }}
-          lineHeight="1.8"
-        >
-          {skill.description}
-        </Text>
+        {/* Wrapper collapses entirely on mobile — no leftover spacing */}
+        <Box display={{ base: "none", md: "block" }} w="full">
+          <Text color="gray.300" fontSize="lg" lineHeight="1.8" noOfLines={3}>
+            {skill.description}
+          </Text>
+        </Box>
       </VStack>
     </Box>
   );
