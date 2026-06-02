@@ -17,6 +17,7 @@ export const Services: React.FC = () => {
       id="services"
       position="relative"
       overflow="hidden"
+      bg="radial-gradient(circle, rgba(66,153,225,0.12) 0%, rgba(236,72,153,0.08) 40%, transparent 70%)"
     >
       <Container maxW="container.xl">
         {/* SERVICES */}

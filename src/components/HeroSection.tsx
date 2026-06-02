@@ -34,6 +34,7 @@ export const HeroSection: React.FC = () => {
       position="relative"
       overflow="hidden"
       bg="#08142B"
+      py="32px"
       id="home"
     >
       {/* Background Glow */}

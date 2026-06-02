@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Chakra UI",
     ],
-    githubUrl: "",
+    githubUrl: "https://github.com/abdulazeez9/roamify",
     liveUrl: "https://roamify-tours.netlify.app",
     featured: true,
     category: "fullstack",
@@ -104,19 +104,19 @@ export const projects: Project[] = [
     featured: false,
     category: "web",
   },
-  {
-    id: 6,
-    name: "Nexus HR",
-    year: 2025,
-    description:
-      "An upcoming full-stack HR management system for handling employee records, payroll, leave requests, and performance tracking. Currently under active development with a Vue.js frontend and a Java Spring Boot backend — watch this space.",
-    images: ["/project-image.webp"],
-    technologies: ["Vue.js", "Java", "Spring Boot", "PostgreSQL"],
-    githubUrl: "",
-    liveUrl: "",
-    featured: true,
-    category: "fullstack",
-  },
+  // {
+  //   id: 6,
+  //   name: "Nexus HR",
+  //   year: 2025,
+  //   description:
+  //     "An upcoming full-stack HR management system for handling employee records, payroll, leave requests, and performance tracking. Currently under active development with a Vue.js frontend and a Java Spring Boot backend — watch this space.",
+  //   images: ["/project-image.webp"],
+  //   technologies: ["Vue.js", "Java", "Spring Boot", "PostgreSQL"],
+  //   githubUrl: "",
+  //   liveUrl: "",
+  //   featured: true,
+  //   category: "fullstack",
+  // },
 ];
 
 export const getFeaturedProjects = (): Project[] => {
