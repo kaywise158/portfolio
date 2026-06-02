@@ -12,7 +12,12 @@ import SkillIconCard from "../ui/cards/SkillIconCard";
 
 export const SkillsAndTech: React.FC = () => {
   return (
-    <Box id="skills" position="relative" overflow="hidden">
+    <Box
+      id="skills"
+      position="relative"
+      overflow="hidden"
+      bg="linear-gradient(135deg, #0a0f2c 0%, #0d1340 40%, #12103a 100%)"
+    >
       <Container maxW="container.xl">
         {/* TECH STACK */}
         <Box mt={{ base: "24", md: "22" }}>
