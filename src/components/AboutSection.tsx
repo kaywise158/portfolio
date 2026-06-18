@@ -106,16 +106,18 @@ export const AboutSection: React.FC = () => {
               About Me
             </Heading>
 
-            <Stack spacing="6">
+               <Stack spacing="6">
               <Text
                 color="gray.300"
                 fontSize={{ base: "md", md: "xl" }}
                 lineHeight="1.9"
               >
-                I am a Full-Stack Developer focusing on building
-                production-ready applications. I enjoy designing APIs, creating
-                interactive user interfaces, and optimizing performance to
-                deliver smooth and efficient user experiences.
+                I'm a Full-Stack Developer with a passion for building
+                applications that feel effortless to use and elegant under the
+                hood. Over the years, I've worked across the entire
+                stack React and Vue on the frontend, Node.js and Spring Boot on
+                the backend delivering systems that don't just work, but work
+                well.
               </Text>
 
               <Text
@@ -123,9 +125,24 @@ export const AboutSection: React.FC = () => {
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="1.9"
               >
-                Along with strong problem-solving skills, I follow clean
-                architecture principles and modern development patterns. I build
-                maintainable applications that feel fast, secure, and intuitive.
+                I believe great software is an intersection of three things:
+                clarity (code others can understand), intentionality (systems
+                built with purpose, not complexity), and reliability
+                (applications your users can trust). I'm drawn to problems that
+                require both strategic thinking and technical depth building
+                marketplace platforms, architecting authentication systems,
+                optimizing performance until applications truly feel fast.
+              </Text>
+              <Text
+                color="gray.400"
+                fontSize={{ base: "md", md: "lg" }}
+                lineHeight="1.9"
+              >
+                Beyond the code, I'm committed to continuous learning and
+                shipping work that has real impact. Whether designing APIs,
+                refining UX, or debugging infrastructure, I approach every
+                challenge with the mindset of someone building something they'd
+                personally use.
               </Text>
             </Stack>
 
