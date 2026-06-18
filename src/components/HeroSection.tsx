@@ -95,9 +95,9 @@ export const HeroSection: React.FC = () => {
               lineHeight="1.8"
               maxW="520px"
             >
-              I build scalable full-stack applications using React, Node.js,
-              Express, MongoDB, Java, and Spring Boot. I love clean code and
-              fast UIs
+              I design and build scalable full-stack applications that solve
+              real problems. My focus: clean architecture, fast user
+              experiences, and systems that compound over time.
             </Text>
 
             {/* BUTTONS */}
