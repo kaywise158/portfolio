@@ -72,7 +72,7 @@ const contactInfo: ContactInfo[] = [
 ];
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/muritador5050", label: "GitHub" },
+  { icon: FaGithub, href: "https://github.com/abdulazeez9", label: "GitHub" },
   {
     icon: FaLinkedin,
     href: "https://linkedin.com/in/abdulazeez-muritador",
@@ -80,7 +80,7 @@ const socialLinks = [
   },
   {
     icon: FaTwitter,
-    href: "https://twitter.com/Az",
+    href: "https://twitter.com/Asadoye5050",
     label: "Twitter",
   },
 ];
