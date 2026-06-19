@@ -26,7 +26,7 @@ const quickLinks: FooterLink[] = [
 ];
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/muritador5050", label: "GitHub" },
+  { icon: FaGithub, href: "https://github.com/abdulazeez9", label: "GitHub" },
   {
     icon: FaLinkedin,
     href: "https://linkedin.com/in/abdulazeez-muritador",
