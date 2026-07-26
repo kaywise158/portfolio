@@ -1,4 +1,5 @@
-import { Box, VStack, Flex, Icon, Heading, Text } from "@chakra-ui/react";
+import { Box, VStack, HStack, Icon, Heading, Text, List, ListItem, ListIcon } from "@chakra-ui/react";
+import { FaCheckCircle } from "react-icons/fa";
 import type { SkillCategory } from "../../utils/Skills";
 
 interface SkillCardProps {
@@ -8,8 +9,9 @@ interface SkillCardProps {
 const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
   return (
     <Box
-      p={{ base: "8", md: "10" }}
-      h="320px"
+      p={{ base: "6", md: "8" }}
+      h="full"
+      minH="380px"
       bg="rgba(16,25,60,0.65)"
       border="1px solid"
       borderColor="rgba(255,255,255,0.12)"
@@ -35,27 +37,38 @@ const SkillCard: React.FC<SkillCardProps> = ({ category }) => {
         transform: "translateY(-8px)",
       }}
     >
-      <VStack h="full" justify="center" spacing="6" textAlign="center">
-        <Flex align="center" justify="center">
-          <Icon as={category.icon} boxSize="16" color="#1E90FF" />
-        </Flex>
+      <VStack h="full" align="start" spacing="4">
+        <HStack spacing="4">
+          <Icon as={category.icon} boxSize="10" color="#1E90FF" />
+          <Heading
+            color="white"
+            fontSize={{ base: "xl", md: "2xl" }}
+            fontWeight="700"
+            lineHeight="1.2"
+          >
+            {category.title}
+          </Heading>
+        </HStack>
 
-        <Heading
-          color="white"
-          fontSize={{ base: "2xl", md: "3xl" }}
-          fontWeight="700"
-          lineHeight="1.2"
-        >
-          {category.title}
-        </Heading>
-
-        <Text
-          color="gray.300"
-          fontSize={{ base: "md", md: "lg" }}
-          lineHeight="1.8"
-        >
+        <Text color="gray.300" fontSize="sm" lineHeight="1.6">
           {category.description}
         </Text>
+
+        <List spacing="2" w="full">
+          {category.items.map((item, i) => (
+            <ListItem
+              key={i}
+              display="flex"
+              alignItems="flex-start"
+              fontSize="sm"
+              color="whiteAlpha.800"
+              lineHeight="1.5"
+            >
+              <ListIcon as={FaCheckCircle} color="#1E90FF" mt="1" boxSize="3.5" />
+              {item}
+            </ListItem>
+          ))}
+        </List>
       </VStack>
     </Box>
   );

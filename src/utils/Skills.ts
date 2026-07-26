@@ -1,27 +1,10 @@
+
 import {
-  FaCode,
-  FaServer,
-  FaDatabase,
-  FaCloud,
-  FaMobile,
+  FaCode, FaServer, FaDatabase, FaCloud, FaMobile, FaSearch, FaStore,
 } from "react-icons/fa";
 import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiExpress,
-  SiSpring,
-  SiMongodb,
-  SiPostgresql,
-  SiDocker,
-  SiGit,
-  SiAmazon,
-  SiRedis,
-  SiGraphql,
+ SiShopify, SiGoogleanalytics, Si1Panel, SiCanva, SiTiktok, SiMeta,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
 import { type IconType } from "react-icons";
 
 interface Skill {
@@ -37,171 +20,173 @@ interface SkillCategory {
   icon: IconType;
   color: string;
   description: string;
+  items: string[];
 }
 
-const skills: Skill[] = [
-  // Frontend
-  {
-    name: "JavaScript",
-    category: "frontend",
-    icon: SiJavascript,
-    color: "#F7DF1E",
-    description:
-      "Writing efficient, modern, and optimized code for frontend and backend applications.",
-  },
-  {
-    name: "TypeScript",
-    category: "frontend",
-    icon: SiTypescript,
-    color: "#3178C6",
-    description:
-      "Building scalable and type-safe applications with improved maintainability.",
-  },
-  {
-    name: "React.js",
-    category: "frontend",
-    icon: SiReact,
-    color: "#61DAFB",
-    description:
-      "Building fast, interactive, and component-based user interfaces.",
-  },
-  {
-    name: "Next.js",
-    category: "frontend",
-    icon: SiNextdotjs,
-    color: "#FFFFFF",
-    description:
-      "Developing high-performance full-stack applications with server-side rendering.",
-  },
 
-  // Backend
-  {
-    name: "Node.js",
-    category: "backend",
-    icon: SiNodedotjs,
-    color: "#339933",
-    description:
-      "Creating scalable backend services and high-performance server applications.",
-  },
-  {
-    name: "Express.js",
-    category: "backend",
-    icon: SiExpress,
-    color: "#FFFFFF",
-    description:
-      "Building secure and efficient REST APIs with flexible backend architecture.",
-  },
-  {
-    name: "Java",
-    category: "backend",
-    icon: FaJava,
-    color: "#007396",
-    description:
-      "Developing robust enterprise-level applications with strong performance.",
-  },
-  {
-    name: "Spring Boot",
-    category: "backend",
-    icon: SiSpring,
-    color: "#6DB33F",
-    description:
-      "Creating scalable Java backend systems with clean and production-ready architecture.",
-  },
-  {
-    name: "GraphQL",
-    category: "backend",
-    icon: SiGraphql,
-    color: "#E10098",
-    description:
-      "Building flexible APIs with efficient data fetching and optimized queries.",
-  },
 
-  // Database
-  {
-    name: "PostgreSQL",
-    category: "database",
-    icon: SiPostgresql,
-    color: "#4169E1",
-    description:
-      "Designing reliable relational databases with secure and efficient data handling.",
-  },
-  {
-    name: "MongoDB",
-    category: "database",
-    icon: SiMongodb,
-    color: "#47A248",
-    description:
-      "Managing flexible NoSQL databases with optimized performance and scalability.",
-  },
-  {
-    name: "Redis",
-    category: "database",
-    icon: SiRedis,
-    color: "#DC382D",
-    description:
-      "Improving application speed using in-memory caching and real-time data storage.",
-  },
 
-  // DevOps & Tools
-  {
-    name: "Docker",
-    category: "devops",
-    icon: SiDocker,
-    color: "#2496ED",
-    description:
-      "Containerizing applications for consistent deployment and development workflows.",
-  },
-  {
-    name: "Git",
-    category: "devops",
-    icon: SiGit,
-    color: "#F05032",
-    description:
-      "Tracking code changes and managing collaborative development efficiently.",
-  },
-  {
-    name: "AWS",
-    category: "devops",
-    icon: SiAmazon,
-    color: "#FF9900",
-    description:
-      "Deploying and scaling cloud-based applications with reliable infrastructure.",
-  },
-];
+interface Skill {
+  name: string;
+  category: string;
+  icon: IconType;
+  color: string;
+  description: string;
+}
+
+interface SkillCategory {
+  title: string;
+  icon: IconType;
+  color: string;
+  description: string;
+  items: string[];
+}
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Development",
+    title: "Shopify Store Design & Redesign",
     icon: FaCode,
     color: "whiteAlpha.700",
-    description:
-      "Building responsive and interactive user interfaces with modern frameworks",
+    description: "Professional, mobile-responsive Shopify stores built to convert.",
+    items: [
+      "Professional Shopify store setup",
+      "Premium, mobile-responsive design",
+      "Homepage and landing page optimization",
+      "Store branding and customization",
+    ],
   },
   {
-    title: "Backend Development",
+    title: "Shopify SEO Optimization",
     icon: FaServer,
     color: "whiteAlpha.700",
-    description: "Creating robust server-side applications and RESTful APIs",
+    description: "On-page and technical SEO to help your store rank and get found.",
+    items: [
+      "Product SEO",
+      "Collection SEO",
+      "Meta titles and descriptions",
+      "Image optimization",
+      "Google Search Console setup",
+      "Sitemap submission",
+      "Technical SEO improvements",
+    ],
   },
   {
-    title: "Mobile Development",
+    title: "Conversion Rate Optimization (CRO)",
     icon: FaMobile,
     color: "whiteAlpha.700",
-    description: "Developing cross-platform mobile applications",
+    description: "Turning more visitors into paying customers.",
+    items: [
+      "Product page optimization",
+      "Trust badges",
+      "Upsell and cross-sell setup",
+      "Cart optimization",
+      "Speed optimization",
+      "Customer journey improvements",
+    ],
   },
   {
-    title: "Database Management",
+    title: "Email Marketing",
     icon: FaDatabase,
     color: "whiteAlpha.700",
-    description: "Designing and managing efficient database solutions",
+    description: "Automated flows and campaigns that recover revenue and retain customers.",
+    items: [
+      "Welcome email automation",
+      "Abandoned cart recovery",
+      "Browse abandonment emails",
+      "Customer win-back campaigns",
+      "Newsletter campaigns",
+    ],
   },
   {
-    title: "DevOps & Cloud",
+    title: "Digital Marketing",
     icon: FaCloud,
     color: "whiteAlpha.700",
-    description:
-      "Managing deployments, CI/CD pipelines, and cloud infrastructure",
+    description: "Paid and organic growth across the platforms your customers use.",
+    items: [
+      "Facebook & Instagram Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "Pinterest Marketing",
+      "Social media growth strategies",
+    ],
+  },
+  {
+    title: "Store Performance Optimization",
+    icon: FaServer,
+    color: "whiteAlpha.700",
+    description: "Faster, smoother stores that keep visitors from bouncing.",
+    items: [
+      "Website speed optimization",
+      "Core Web Vitals improvements",
+      "Mobile optimization",
+      "User experience enhancements",
+    ],
   },
 ];
 
-export { skills, skillCategories, type Skill, type SkillCategory };
+const tools: Skill[] = [
+  {
+    name: "Shopify",
+    category: "tools",
+    icon: SiShopify,
+    color: "#95BF47",
+    description: "Building and managing full Shopify store setups.",
+  },
+  {
+    name: "Google Analytics",
+    category: "tools",
+    icon: SiGoogleanalytics,
+    color: "#E37400",
+    description: "Tracking traffic, behavior, and conversion performance.",
+  },
+  {
+    name: "Google Search Console",
+    category: "tools",
+    icon: FaSearch, // no dedicated SI brand icon exists for this yet
+    color: "#4285F4",
+    description: "Monitoring search performance and indexing health.",
+  },
+  {
+    name: "Google Merchant Center",
+    category: "tools",
+    icon: FaStore, 
+    color: "#4285F4",
+    description: "Managing product listings for Shopping ads.",
+  },
+  {
+    name: "Klaviyo",
+    category: "tools",
+    icon: Si1Panel,
+    color: "#000000",
+    description: "Building email automation flows and campaigns.",
+  },
+  {
+    name: "Meta Ads Manager",
+    category: "tools",
+    icon: SiMeta,
+    color: "#0668E1",
+    description: "Running Facebook & Instagram ad campaigns.",
+  },
+  {
+    name: "TikTok Ads Manager",
+    category: "tools",
+    icon: SiTiktok,
+    color: "#000000",
+    description: "Launching and optimizing TikTok ad campaigns.",
+  },
+  {
+    name: "Canva",
+    category: "tools",
+    icon: SiCanva,
+    color: "#00C4CC",
+    description: "Designing store graphics and marketing creatives.",
+  },
+];
+
+export {  tools, type Skill, skillCategories, type SkillCategory };
+
+
+
+
+
+

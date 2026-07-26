@@ -112,12 +112,10 @@ export const AboutSection: React.FC = () => {
                 fontSize={{ base: "md", md: "xl" }}
                 lineHeight="1.9"
               >
-                I'm a Full-Stack Developer with a passion for building
-                applications that feel effortless to use and elegant under the
-                hood. Over the years, I've worked across the entire
-                stack React and Vue on the frontend, Node.js and Spring Boot on
-                the backend delivering systems that don't just work, but work
-                well.
+            Hi, I'm Kaywise, a Shopify Growth Specialist dedicated to helping
+               e-commerce brands build, optimize, and scale profitable 
+               Shopify stores. My focus is not just on creating attractive websites, but on increasing traffic, improving conversions, 
+              and generating consistent sales through proven marketing strategies.
               </Text>
 
               <Text
@@ -125,25 +123,11 @@ export const AboutSection: React.FC = () => {
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="1.9"
               >
-                I believe great software is an intersection of three things:
-                clarity (code others can understand), intentionality (systems
-                built with purpose, not complexity), and reliability
-                (applications your users can trust). I'm drawn to problems that
-                require both strategic thinking and technical depth building
-                marketplace platforms, architecting authentication systems,
-                optimizing performance until applications truly feel fast.
+                Whether you're launching a new store or looking
+                 to grow an existing one, I provide customized 
+                 solutions that help businesses achieve measurable results.
               </Text>
-              <Text
-                color="gray.400"
-                fontSize={{ base: "md", md: "lg" }}
-                lineHeight="1.9"
-              >
-                Beyond the code, I'm committed to continuous learning and
-                shipping work that has real impact. Whether designing APIs,
-                refining UX, or debugging infrastructure, I approach every
-                challenge with the mindset of someone building something they'd
-                personally use.
-              </Text>
+              
             </Stack>
 
             <Flex pt="2">

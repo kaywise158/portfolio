@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY + 100; // 100px offset for the navbar height
+      const scrollY = window.scrollY + 100; 
 
       for (let i = navLinks.length - 1; i >= 0; i--) {
         const el = document.getElementById(navLinks[i].id);
@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
               bgGradient="linear(to-r, #3B82F6, #A855F7, #EF4444)"
               bgClip="text"
             >
-              FullStack Developer
+           Kaywise Digital
             </Text>
           </ChakraLink>
 
@@ -145,7 +145,7 @@ export const Navbar: React.FC = () => {
               transition="all 0.3s ease"
               display={{ base: "none", md: "flex" }}
             >
-              ✨ Hire Me
+               Hire Me
             </Button>
 
             <IconButton
@@ -178,7 +178,7 @@ export const Navbar: React.FC = () => {
               bgGradient="linear(to-r, #3B82F6, #A855F7, #EF4444)"
               bgClip="text"
             >
-              Abdulazeez
+              Kaywise Digital
             </Text>
           </DrawerHeader>
 
@@ -222,7 +222,7 @@ export const Navbar: React.FC = () => {
                 fontWeight="700"
                 _hover={{ opacity: 0.9 }}
               >
-                ✨ Hire Me
+                 Hire Me
               </Button>
             </VStack>
           </DrawerBody>

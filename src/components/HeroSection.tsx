@@ -84,9 +84,8 @@ export const HeroSection: React.FC = () => {
               bgGradient="linear(to-r, #3B82F6, #A855F7, #EF4444)"
               bgClip="text"
             >
-              Abdulazeez
-              <br />
-              Muritador
+               Kaywise
+            
             </Heading>
 
             <Text
@@ -95,10 +94,7 @@ export const HeroSection: React.FC = () => {
               lineHeight="1.8"
               maxW="520px"
             >
-              I design and build scalable full-stack applications that solve
-              real problems. My focus: clean architecture, fast user
-              experiences, and systems that compound over time.
-            </Text>
+Shopify Growth & E-commerce Marketing Specialist            </Text>
 
             {/* BUTTONS */}
             <HStack

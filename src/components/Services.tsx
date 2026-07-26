@@ -33,14 +33,11 @@ export const Services: React.FC = () => {
               maxW={"2xl"}
               mx={"auto"}
             >
-              I offer design and development services focused on building fast,
-              modern and user-friendly digital experiences. Whether you need a
-              full-stack solution or just a stunning frontend, I've got you
-              covered.
+             Shopify Store Design & Redesign
             </Text>
           </Stack>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="6">
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="6">
             {skillCategories.map((category, index) => (
               <Box key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <SkillCard category={category} />

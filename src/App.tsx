@@ -4,13 +4,13 @@ import "aos/dist/aos.css";
 import { Box } from "@chakra-ui/react";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
-import { ProjectsSection } from "./components/ProjectsSection";
-import { ContactSection } from "./components/ContactSection";
+import { MyProcessSection } from "./components/MyProcessSection";
+import { IndustriesSection } from "./components/IndustriesSection";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Navbar } from "./components/Navbar";
 import { Services } from "./components/Services";
-import { SkillsAndTech } from "./components/SkillsAndTech";
+import {  ToolsAndPlatforms } from "./components/ToolsAndPlatforms";
 
 function App() {
   useEffect(() => {
@@ -28,10 +28,10 @@ function App() {
       <Box overflowX="hidden">
         <HeroSection />
         <AboutSection />
-        <SkillsAndTech />
+        <ToolsAndPlatforms />
         <Services />
-        <ProjectsSection />
-        <ContactSection />
+        <MyProcessSection />
+        <IndustriesSection />
         <Footer />
         <ScrollToTop />
       </Box>
