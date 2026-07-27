@@ -4,33 +4,14 @@ import {
   Stack,
   Text,
   Link as ChakraLink,
-  HStack,
-  Icon,
+ 
   SimpleGrid,
   VStack,
   Heading,
   Button,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
-const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/abdulazeez9", label: "GitHub" },
-  {
-    icon: FaLinkedin,
-    href: "https://linkedin.com/in/abdulazeez-muritador",
-    label: "LinkedIn",
-  },
-  {
-    icon: FaTwitter,
-    href: "https://x.com/Asadoye5050",
-    label: "Twitter",
-  },
-  {
-    icon: FaEnvelope,
-    href: "mailto:abdulazeezmuritador9@gmail.com",
-    label: "Email",
-  },
-];
+
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -78,7 +59,7 @@ export const Footer: React.FC = () => {
               that drives sustainable growth and increases your sales.
             </Text>
             <Button
-              onClick={() => scrollTo("contact")}
+              onClick={() => scrollTo("home")}
               size="lg"
               borderRadius="full"
               px="10"
@@ -108,40 +89,13 @@ export const Footer: React.FC = () => {
               bgClip="text"
               fontFamily='"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
             >
-              FullStack Developer
+              Kaywise Digital
             </Text>
             <Text color="gray.400" fontSize="sm">
               Shopify specialist helping brands optimize their stores and
               build marketing strategies that drive sustainable growth.
             </Text>
-            <HStack spacing="3">
-              {socialLinks.map((social, index) => (
-                <ChakraLink
-                  key={index}
-                  href={social.href}
-                  isExternal
-                  aria-label={social.label}
-                >
-                  <Box
-                    w="10"
-                    h="10"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    borderRadius="md"
-                    bg="#1a8fe3"
-                    color="white"
-                    transition="all 0.3s"
-                    _hover={{
-                      bg: "#1577c4",
-                      transform: "translateY(-2px)",
-                    }}
-                  >
-                    <Icon as={social.icon} boxSize="5" />
-                  </Box>
-                </ChakraLink>
-              ))}
-            </HStack>
+            
           </VStack>
 
           {/* Contact Info */}
@@ -152,18 +106,18 @@ export const Footer: React.FC = () => {
             <Stack spacing="2" fontSize="sm" color="gray.400">
               <Text>Lagos, Nigeria</Text>
               <ChakraLink
-                href="mailto:abdulazeezmuritador9@gmail.com"
+                href="mailto:kaywise158@gmail.com"
                 _hover={{ color: "white" }}
                 transition="color 0.2s"
               >
-                abdulazeezmuritador9@gmail.com
+                kaywise158@gmail.com
               </ChakraLink>
               <ChakraLink
-                href="tel:+2348148985591"
+                href="tel:+2347062711603"
                 _hover={{ color: "white" }}
                 transition="color 0.2s"
               >
-                +234-8148-985-591
+                +234-7062-711-603
               </ChakraLink>
             </Stack>
           </VStack>
@@ -175,7 +129,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Section */}
         <Stack textAlign="center">
           <Text fontSize="sm" color="gray.400">
-            Copyright © {currentYear} Abdulazeez Muritador | All rights
+            Copyright © {currentYear} Kaywise Digital | All rights
             reserved.
           </Text>
         </Stack>
