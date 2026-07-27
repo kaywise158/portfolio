@@ -22,6 +22,7 @@ function App() {
     });
   }, []);
 
+ 
   return (
     <Box minHeight="100vh">
       <Navbar />

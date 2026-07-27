@@ -29,8 +29,8 @@ const navLinks: NavLink[] = [
   { name: "Home", id: "home" },
   { name: "About", id: "about" },
   { name: "Services", id: "services" },
-  { name: "Projects", id: "projects" },
-  { name: "Contact", id: "contact" },
+  { name: "Process", id: "process" },
+  { name: "Industries", id: "industries" },
 ];
 
 export const Navbar: React.FC = () => {
@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
           {/* RIGHT ACTIONS */}
           <HStack spacing="3">
             <Button
-              onClick={() => scrollTo("contact")}
+              onClick={() => scrollTo("home")}
               h="52px"
               px="8"
               borderRadius="full"
@@ -213,7 +213,7 @@ export const Navbar: React.FC = () => {
                 mt="6"
                 onClick={() => {
                   onClose();
-                  setTimeout(() => scrollTo("contact"), 300);
+                  setTimeout(() => scrollTo("home"), 300);
                 }}
                 h="55px"
                 borderRadius="full"

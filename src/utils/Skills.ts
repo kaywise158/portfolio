@@ -7,23 +7,6 @@ import {
 } from "react-icons/si";
 import { type IconType } from "react-icons";
 
-interface Skill {
-  name: string;
-  category: string;
-  icon: IconType;
-  color: string;
-  description: string;
-}
-
-interface SkillCategory {
-  title: string;
-  icon: IconType;
-  color: string;
-  description: string;
-  items: string[];
-}
-
-
 
 
 interface Skill {
@@ -40,6 +23,26 @@ interface SkillCategory {
   color: string;
   description: string;
   items: string[];
+}
+
+interface Industry {
+  icon: IconType;
+  label: string;
+}
+
+interface Reason {
+  icon: IconType;
+  title: string;
+  description: string;
+}
+
+
+interface IndustryCardProps {
+  industry: Industry;
+}
+
+interface ReasonCardProps {
+  reason: Reason;
 }
 
 const skillCategories: SkillCategory[] = [
@@ -183,7 +186,10 @@ const tools: Skill[] = [
   },
 ];
 
-export {  tools, type Skill, skillCategories, type SkillCategory };
+
+
+export {  tools,  skillCategories, type SkillCategory, type Skill, 
+  type IndustryCardProps, type ReasonCardProps, type Reason, type Industry  };
 
 
 

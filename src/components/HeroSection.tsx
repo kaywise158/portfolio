@@ -13,14 +13,12 @@ import {
 } from "@chakra-ui/react";
 
 import {
-  FaReact,
-  FaNodeJs,
-  FaJsSquare,
-  FaHtml5,
-  FaCss3Alt,
+ 
+  FaSearch,
+  FaStore,
 } from "react-icons/fa";
 
-import { SiExpress, SiMongodb } from "react-icons/si";
+import { Si1Panel, SiCanva, SiGoogleanalytics, SiMeta, SiShopify } from "react-icons/si";
 import { BsArrowUpRight } from "react-icons/bs";
 
 import scrollTo from "../utils/scrollTo";
@@ -94,7 +92,8 @@ export const HeroSection: React.FC = () => {
               lineHeight="1.8"
               maxW="520px"
             >
-Shopify Growth & E-commerce Marketing Specialist            </Text>
+          Shopify Growth & E-commerce Marketing Specialist     
+                 </Text>
 
             {/* BUTTONS */}
             <HStack
@@ -104,7 +103,7 @@ Shopify Growth & E-commerce Marketing Specialist            </Text>
               align={{ base: "stretch", sm: "center" }}
             >
               <Button
-                onClick={() => scrollTo("projects")}
+                onClick={() => scrollTo("process")}
                 size="lg"
                 px="10"
                 h="60px"
@@ -118,12 +117,12 @@ Shopify Growth & E-commerce Marketing Specialist            </Text>
                 }}
                 transition="all 0.3s ease"
               >
-                View Projects
+                View Process
               </Button>
 
               <Button
                 as={Link}
-                href="https://wa.me/2348148985591?text=Hello%20I%20would%20like%20to%20work%20with%20you"
+                href="https://wa.me/2347062711603?text=Hello%20I%20would%20like%20to%20work%20with%20you"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
@@ -200,37 +199,37 @@ Shopify Growth & E-commerce Marketing Specialist            </Text>
               {/* FLOATING ICONS */}
               {[
                 {
-                  icon: FaReact,
+                  icon: SiShopify,
                   top: "5%",
                   right: "-2%",
                 },
                 {
-                  icon: FaNodeJs,
+                  icon: SiGoogleanalytics,
                   top: "50%",
                   right: "-10%",
                 },
                 {
-                  icon: FaJsSquare,
+                  icon: FaSearch,
                   top: "45%",
                   left: "-10%",
                 },
                 {
-                  icon: FaCss3Alt,
+                  icon: FaStore,
                   bottom: "0%",
                   left: "10%",
                 },
                 {
-                  icon: FaHtml5,
+                  icon: Si1Panel,
                   bottom: "-2%",
                   right: "5%",
                 },
                 {
-                  icon: SiExpress,
+                  icon: SiMeta,
                   top: "10%",
                   left: "0%",
                 },
                 {
-                  icon: SiMongodb,
+                  icon: SiCanva,
                   bottom: "15%",
                   left: "-5%",
                 },

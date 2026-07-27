@@ -5,7 +5,6 @@ import {
   Text,
   SimpleGrid,
   Stack,
-  Flex,
   Image,
 } from "@chakra-ui/react";
 
@@ -130,28 +129,7 @@ export const AboutSection: React.FC = () => {
               
             </Stack>
 
-            <Flex pt="2">
-              <Box
-                as="a"
-                href="/resume.pdf"
-                download
-                px="9"
-                py="4"
-                borderRadius="full"
-                color="white"
-                fontWeight="700"
-                fontSize="lg"
-                transition="0.35s ease"
-                bgGradient="linear(to-r, #2F80ED, #EB5757)"
-                boxShadow="0 10px 35px rgba(80,120,255,0.35)"
-                _hover={{
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 15px 45px rgba(80,120,255,0.45)",
-                }}
-              >
-                Download Resume ↓
-              </Box>
-            </Flex>
+           
           </Stack>
         </SimpleGrid>
       </Container>

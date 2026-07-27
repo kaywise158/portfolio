@@ -39,7 +39,7 @@ interface ProcessStepCardProps {
 }
 
 const ProcessStepCard: React.FC<ProcessStepCardProps> = ({ step, isLast }) => (
-  <Box position="relative" h="full">
+  <Box id="process" position="relative" h="full">
     {/* Connector line to the next step (desktop only) */}
     {!isLast && (
       <Box
