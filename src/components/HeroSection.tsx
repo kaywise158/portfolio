@@ -182,8 +182,8 @@ Shopify Growth & E-commerce Marketing Specialist            </Text>
                 boxShadow="0 0 80px rgba(59,130,246,0.2)"
               >
                 <Avatar
-                  src="/my-profile-image.webp"
-                  name="Abdulazeez"
+                  src="/kaywise-profile.webp"
+                  name="kaywise"
                   w="100%"
                   h="100%"
                   borderRadius="full"
