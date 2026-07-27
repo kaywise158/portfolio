@@ -72,7 +72,7 @@ export const AboutSection: React.FC = () => {
               />
 
               <Image
-                src="/my-profile-image.webp"
+                src="/kaywise-profile.webp"
                 alt="Profile"
                 w="100%"
                 h={{ base: "500px", md: "650px" }}
